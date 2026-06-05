@@ -1,27 +1,30 @@
-# Pre-built Compounds (.gguf)
+# Pre-Built Compounds (.gguf control vectors)
 
-Pre-trained control vectors in GGUF format, ready for direct use with `llama.cpp`.
+This directory stores pre-built steering vectors in .gguf format
+for use directly with llama.cpp's `--control-vector` flag.
 
 ## Usage
 
 ```bash
 llama-cli \
-  -m your-model.gguf \
-  --control-vector compounds/happiness_mistral7b.gguf \
-  --control-vector-scaled compounds/confidence_mistral7b.gguf 1.5 \
-  -p "Tell me about yourself."
+  -m /path/to/model.gguf \
+  --control-vector ./compounds/happiness.gguf \
+  --control-vector-scaled ./compounds/confidence.gguf 1.5 \
+  -p "Tell me about your day."
 ```
 
-## Contributing Compounds
+## Building from scratch
 
-To add a pre-built compound:
-1. Train with `administration/control_vector.py`
-2. Export with `drug.save_gguf('compounds/yourname_modelname.gguf')`
-3. Add an entry to the table below
-4. Open a PR
+```python
+from administration.control_vector import ControlVectorDrug
+drug = ControlVectorDrug("meta-llama/Meta-Llama-3-8B")
+drug.load_preset("happiness")
+drug.apply(coefficient=1.5)
+drug.save_gguf("./compounds/happiness.gguf")
+```
 
-## Compound Registry
+## Sources
 
-| File | Drug Class | Base Model | Coeff Range | Author |
-|---|---|---|---|---|
-| *(coming soon — contribute yours!)* | | | | |
+Pre-built vectors (community):
+- https://github.com/jukofyork/control-vectors
+- https://huggingface.co/jukofyork/control-vectors
