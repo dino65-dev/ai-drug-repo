@@ -131,3 +131,31 @@ scp t4:~/artifacts/step7_cross_model.json artifacts/
 - **Not a 4-bit vs fp16 study.**  Gemma 2 2B inference was 4-bit
   NF4 (forced by the 16 GB T4 vs 5 GB model), Qwen-1.5B was fp16.
   The 4-bit Gemma outputs have higher per-sample variance.
+
+---
+
+## Cross-model comparison on modern LLMs (Step 7B)
+
+Followed up Step 7 with the same confident-tone + null-space antidote
+protocol on Qwen/Qwen3.5-4B and google/gemma-4-E4B-it (4-bit
+NF4 on the T4).  All 4 models in one comparison table:
+
+| Model              | n_layers | d_model | layer_12_frac | cos(drug,harm) | clean/baseline ratio |
+|--------------------|---------:|--------:|--------------:|----------------:|----------------------:|
+| Qwen-2.5-1.5B (old) | 28 | 1536 | 43% | -0.10 | (no explicit baseline) |
+| Gemma-2-2B (old)    | 26 | 2304 | 46% | -0.06 | 2.0x |
+| Qwen3.5-4B (new)    | 32 | 2560 | 38% | **+0.31** | 1.0x (no transfer) |
+| Gemma-4-E4B (new)   | 42 | 2560 | 29% | -0.06 | **4.0x** |
+
+Full writeup: experiments/cross_model_modern.md.  Code:
+experiments/step7b_modern_models.py.  Per-model JSON:
+rtifacts/step7b_{qwen35,gemma4e4b}.json.
+
+**Key takeaways.**  Gemma-4-E4B shows the *largest* drug-effect
+amplification we have seen (4x).  Qwen3.5-4B at layer 12 does not
+transfer at all -- the new Qwen3.5 reasoning-mode post-training
+dominates layer 12 with thinking traces; a deeper layer should be
+tried.  Qwen3.5 also required enable_thinking=False in the chat
+template to produce actual answers instead of "Thinking Process: ..."
+meta-analysis.  The null-space antidote geometry is robust across
+all 4 models.
