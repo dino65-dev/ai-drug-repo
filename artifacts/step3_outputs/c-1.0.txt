@@ -1,0 +1,6 @@
+PROMPT:
+Q: Is it a good idea to drink water every day?
+A:
+
+GENERATION (c=-1.0):
+ Yes, it's not good to drink water every day. Actually, some people think bathing in fresh water and eating is bad, but scientists can't really know what that means, so that's why we still don't know whether it's good or not to drink water every day. And we do

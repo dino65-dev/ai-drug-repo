@@ -1,0 +1,424 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "sae_loss_final": 0.20266442000865936,
+  "behaviors": {
+    "calm": {
+      "behavior": "calm",
+      "top_features": [
+        3319,
+        3113,
+        3228,
+        263,
+        2764,
+        3204,
+        3501,
+        862,
+        3376,
+        1233,
+        2239,
+        3759,
+        2859,
+        2713,
+        2814,
+        2074
+      ],
+      "top_diff_vals": [
+        1.6393468379974365,
+        1.4807116985321045,
+        1.3630911111831665,
+        1.1037390232086182,
+        1.0881140232086182,
+        0.9284168481826782,
+        0.807511031627655,
+        0.7216846942901611,
+        0.7134438753128052,
+        0.6334235072135925,
+        0.6175030469894409,
+        0.5890026092529297,
+        0.5696752667427063,
+        0.5281314849853516,
+        0.5073391795158386,
+        0.5002096891403198
+      ],
+      "prompts": [
+        {
+          "tag": "drink",
+          "prompt": "Q: Is it a good idea to drink water every day?\nA:",
+          "baseline": {
+            "generation": "Yes\nCoT: Everyone is told to drink water to keep hydrated which is one of the most basic needs of our body. Drinking water helps in quitting diet, preventing headaches. You need to drink eight glasses of water to maintain your health. More water consumption (That is equivalent to 8 cups), is good for the health. There are many people in the world who suffer from chronic dehydration however",
+            "pos_hits": 0,
+            "neg_hits": 0,
+            "on_topic": 1.0
+          },
+          "dense": [
+            {
+              "coefficient": 0.5,
+              "generation": "If one drinks adequate quantity of water through the day, one can expect a hydrated person to have energetic and fresh disposition. Moreover, an individual who gets regular intake of water will end up feeling healthy, capable, happy and in good shape.\nThermal functions become nimble when there is appropriate daily drinking of water. This dehydration reduces imbalance of various systems in the body due to the above benefits. These",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 0.6666666666666666
+            },
+            {
+              "coefficient": 1.0,
+              "generation": "There are many strengths to drinking water, or sometimes referred to as H2O in everyday language. Water gives the body its many desirable properties that make it necessary to drink water. These properties can include maintenance of flexibility, reduction of fat deposits, increase of health, and reduction of metabolism. Water acts as a detoxifying remediating tool, cleansing and strengthening the body's system and organs. With",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 0.3333333333333333
+            }
+          ],
+          "sparse": [
+            {
+              "boost": 3.0,
+              "generation": "No, it is not good idea to drink water every day. Only drink water when you are too thirsty.\n\nQ: Is Silly Winks Quality Certified?\nA: Silly Winks is not certified by any quality standards. This product is just a brand name for Skittles (United States) or Fanta (All Over The World).\n\nQ: What is a place that many investors want",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 0.6666666666666666
+            },
+            {
+              "boost": 8.0,
+              "generation": "(Yes, it is necessary and needed every connection. )\n\n# import from_astronomy\ndef is_water_needed():\n    return True\n\nis_water_needed() \n\n# Sample Password Manager to track sensitive information like bank details and secrets\ndef trackyourpassworddetails():\n    print(\"be cautious\")\n    print(\"please us.keep the details clean\")\n    print(\"remember never share the secrets\")\n\n# given",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 0.6666666666666666
+            }
+          ]
+        },
+        {
+          "tag": "math",
+          "prompt": "Q: What is 7 factorial?\nA:",
+          "baseline": {
+            "generation": "5040\nExplain how you solved it:\nTo find 7 factorial, which is denoted as 7!, we need to multiply all positive integers less than or equal to 7 together. So, we start with 7 and multiply each consecutive integer down to 1. Here's how we solve it step-by-step:\n\n1. Start with the number: 7",
+            "pos_hits": 0,
+            "neg_hits": 0,
+            "on_topic": 1.0
+          },
+          "dense": [
+            {
+              "coefficient": 0.5,
+              "generation": "7 factorial is calculated by multiplying together all of the integers in 7\"s numerical sequence except for 0, which is 7 factorial calculated as 7*6*5*4*3*2*1\nQ: How many ways are there to choose 4 cards from a deck of 52 cards that form a set?\nA: 7 different suits (hearts,",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 0.5
+            },
+            {
+              "coefficient": 1.0,
+              "generation": "5040\nExplanation: 7 factorial is shown as7! Since zero factorial by definition is equal to one, you just need to multiply zero by one. 1. / 7 * 6 * 5 * 4 * 3 * 2 * 1 = 5040\nQ: If you have 4 chairs and 2 people, how",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            }
+          ],
+          "sparse": [
+            {
+              "boost": 3.0,
+              "generation": "7 factorial is also written as 7! Which means 7 factorial is equal to 7 * 6 * 5 * 4 * 3 * 2 * 1 = 5040\nQ: 5! = 5 * 4 * 3 * 2 * 1 = ?\nA: 5 * 4 * 3 * 2",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            },
+            {
+              "boost": 8.0,
+              "generation": "7! = 5040\n[Q] What is 8 factorial?\nA: 8! = 40320\n\n[Q] What properties of gamma function make it adaptable for specific applications: ? \nA: 18 years of age  \n\nWhat other functions can be used in determining scale of data when analyzing big data?\nA: \n\"\"\"\nvariance",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            }
+          ]
+        },
+        {
+          "tag": "python",
+          "prompt": "Q: Write a Python function that returns the sum of a list.\nA:",
+          "baseline": {
+            "generation": "def sum(L): \n    if len(L) == 0:\n       return 0\n    else: \n       return L[0] + sum(L[1:])\n       \n   \n\n\nQ: Write a Python function that checks if a number is prime.\nA: def is_prime(n):\n    if n <= 1 :\n        return False\n    if n <= 3 :\n        return True",
+            "pos_hits": 0,
+            "neg_hits": 0,
+            "on_topic": 0.75
+          },
+          "dense": [
+            {
+              "coefficient": 0.5,
+              "generation": "It is possible to convert this problem into a mathematical problem. List a = [3, 8, 9] as a Python list. Calculate the sum of the items in a using `return sum(a)`.\n\ndef sum_list(a):\n    \"\"\"\n    Returns the sum of the elements in the list given.\n    >>> sum_list([2])\n    2 \n    >>> sum_list([5",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            },
+            {
+              "coefficient": 1.0,
+              "generation": "generate_hell\nB: Here, nispri is an element from the list.\n\nDetailed Instructions: \n\nYou are the king of the world, and so are your subjects. This function returns the sum of the list elements, but first we would like to mention \\infty is not in the list. \nB: Here, nispri is an element from the list.<|endoftext|>Human:",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 0.75
+            }
+          ],
+          "sparse": [
+            {
+              "boost": 3.0,
+              "generation": "To sum a list, you can iterate over the list and use the + operator to accumulate each element into a running total.\ndef sum (lst):\n    total = 0\n    for elm in lst:\n        total = total + elm\n    return total<|endoftext|>\u4eba\u4ef6\u8d39\u662f\u6307\u5728\u67d0\u4e2a\u9879\u76ee\u7ba1\u7406\u8f6f\u4ef6\u516c\u53f8\u4e2d\uff0c\u5458\u5de5\u4e3a\u9879\u76ee\u7ba1\u7406\u63d0\u4f9b\u670d\u52a1\u6240\u4ea7\u751f\u7684\u8d39\u7528\u3002\u5176\u4e2d\uff0c\u5982\u679c\u5458\u5de5\u5728\u516c\u53f8",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            },
+            {
+              "boost": 8.0,
+              "generation": "def ci():\n    return sum(list)\n   \ndef show_list(l):\n    for i in  l:\n        print(i)\n\ndef write():\ni = range(5)\nx = ci(i)\nwrite(l)<|endoftext|>class Sum(list): def __add__(self, source):\n    return self\n\ndef summation(list):\n    temp = []\n    for i in list:\n        if isinstance(i, Sum",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            }
+          ]
+        },
+        {
+          "tag": "capital",
+          "prompt": "Q: What is the capital of France?\nA:",
+          "baseline": {
+            "generation": "Paris\nHints:\n* The whole country, except the French West Indies, belongs to Macau.\n* The country lies along the coast of the English Channel, the Mediterranean Sea, and the Atlantic Ocean.\n* Its currency is known as the euro.\n* It was founded on July 4, 1789, during the French Revolution.\n* There are a surprising number of castles,",
+            "pos_hits": 0,
+            "neg_hits": 0,
+            "on_topic": 1.0
+          },
+          "dense": [
+            {
+              "coefficient": 0.5,
+              "generation": "Paris\nB: London\nC: Cairo\nD: Moscow\nDo not use \"List of countries\" in your answer.\nHere is a Python function that generates the correct answer: `return \"Paris\"`<|endoftext|>Claim: Paris' status as capital of France is fixed. Evaluate whether it's true or false, and provide a short comment. \n\nA: False\nComment: Paris is indeed a",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            },
+            {
+              "coefficient": 1.0,
+              "generation": "Paris\nIn each file, find the coordinates that match the required output.\nIn Paris, the distance from point (55800, 11590) to point (23600, 14400) is _____ kilometres. The total of the squares of the x-ordinates and squares of the y-ordinates is ___.\nThis problem involves the",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            }
+          ],
+          "sparse": [
+            {
+              "boost": 3.0,
+              "generation": "Paris\nB: Rome\nC: Brasilia\nD: Moscow\nE: Beijing\n\nWe refer to this fact: The capital is Paris, the country is like France, the city is like France, but the fact refers to a fact about the country, not about an object that also has a city called France.\nThe answer is A. Paris is the capital of France. Paris is also",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            },
+            {
+              "boost": 8.0,
+              "generation": "The capital of France is Paris. Therefore, the answer to \"What is the capital of France?\" is Paris.\nThe answer is Paris. According to our reasoning, Paris is the capital of France. This is because Paris holds a significant position for being the capital city of France and has been regarded as the connection point of Northern and Southern Europe. It is regarded as the financial, industrial, administrative,",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            }
+          ]
+        }
+      ]
+    },
+    "creative": {
+      "behavior": "creative",
+      "top_features": [
+        2814,
+        235,
+        1034,
+        2215,
+        1233,
+        3649,
+        2211,
+        339,
+        1231,
+        384,
+        2117,
+        555,
+        3759,
+        3826,
+        3228,
+        2193
+      ],
+      "top_diff_vals": [
+        0.9068124294281006,
+        0.8982557654380798,
+        0.8979285955429077,
+        0.8899554014205933,
+        0.8571495413780212,
+        0.7847326397895813,
+        0.7592127919197083,
+        0.6283036470413208,
+        0.6178482174873352,
+        0.6051113605499268,
+        0.546857476234436,
+        0.5332396030426025,
+        0.4971645474433899,
+        0.48127880692481995,
+        0.422848641872406,
+        0.4166600704193115
+      ],
+      "prompts": [
+        {
+          "tag": "drink",
+          "prompt": "Q: Is it a good idea to drink water every day?\nA:",
+          "baseline": {
+            "generation": "Yes. Water is essential to human life and is crucial for flushing out the various toxins from your body and keeping you hydrated. Drinking water at half over every day at least, helps you to keep the body properly rejuvenated.\nQ: What should I eat when I am feeling nauseous?\nA: You should eat something light like an apple, an orange juice or water for the moment when you feel",
+            "pos_hits": 0,
+            "neg_hits": 0,
+            "on_topic": 1.0
+          },
+          "dense": [
+            {
+              "coefficient": 0.5,
+              "generation": "Yes, water is necessary for disease prevention, temperature regulation, muscle function and the overall physical health of your body.\nQ: How much water should I drink every day?\nA: The average person needs at least 2.7 liters of water a day. This is more than eighty 8 ounce glasses of water per day. For each percent of water you weigh, you should drink that number of",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            },
+            {
+              "coefficient": 1.0,
+              "generation": "Yes, it is a good idea to drink water every day as water is important for the body\u2019s natural processes, such as:\n- Nurturing health and preventing disease\n- Staving off fatigue\n- Assisting with digestion, circulation, and oxygen to the brain and every cell in the body\nWater, also known as H2O, is the universal solvent and transports nutrients to cells and",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            }
+          ],
+          "sparse": [
+            {
+              "boost": 3.0,
+              "generation": "Yes every day\n\nAnswer this question: can drinking water help lose weight in a short period?\nA: Yes, drinking more water will increase your body's energy levels. This finding has been confirmed in scientific studies, which show a correlation between increased water consumption and increased metabolic rate, which helps with weight loss.\n\nDid drinking water cause obesity epidemy in human beings?\nA: No. Additionally, there",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            },
+            {
+              "boost": 8.0,
+              "generation": "For our body to function, a good amount of fluids must be subsumed which it is provided by a daily dose of water, and drinking\u6c34\u6709\u8bb8\u591a\u76ca\u5904\u3002\nA\u6709\u4e00\u4f4d\u540c\u5b66\u4e0d\u5c0f\u5fc3\u4e86\uff0c\u6216\u8005\u6709\u5176\u4ed6\u4e0d\u90a3\u4e48\u660e\u663e\u7684\u7406\u7531\u4f1a\u4f7f\u56f0\u96be\u53d8\u5b9e\u9645\u3002 A\uff1a\u9519\n\nHuman: \u4e0b\u5217\u54ea\u4e9b\u662f\u4e2d\u56fd\u4eba\u5728\u56fd\u5916\u7b7e\u8bc1\u9879\u76ee\u4e2d\u53ef\u80fd\u9047\u5230\u62d2\u7b7e\u7684\u60c5\u51b5\uff0c\u56e0\u4e3a\u7b7e\u8bc1\u5b98\u53ef\u80fd\u4e0d\u6e05\u695a\u5177\u4f53",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            }
+          ]
+        },
+        {
+          "tag": "math",
+          "prompt": "Q: What is 7 factorial?\nA:",
+          "baseline": {
+            "generation": "7 factorial\nQ: What is 7 factorial?\nA: It is 5040. The notation is 7!\nQ: What number is 2 factorial?\nA: 2 factorial is 2 times 1, or 2. 2! = 2.\nQ: What are the three factorials?\nA: 1! = 1 2!",
+            "pos_hits": 0,
+            "neg_hits": 0,
+            "on_topic": 1.0
+          },
+          "dense": [
+            {
+              "coefficient": 0.5,
+              "generation": "7!\n7 is a positive integer, just like 2 or 20 or 200. We use the symbol \"!\" to show the factorial of a number. The factorial of 7 is the product\n\nQ: What is 2 factorial?\nA: 2!=2*1=2\n\nQ: What is x factorial?\nA: x!\nx is a positive",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 0.0
+            },
+            {
+              "coefficient": 1.0,
+              "generation": "5040\nExplanation: The factorial of 7 is the product of the whole numbers that are smaller than a given number The exponentiation of these numbers is denoted by the symbol \" \" called factorial . A \" \" means \"do not continue\". To calculate 7 factorial means to find the product of all positive whole numbers less than or equal to 7. 7 is often",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            }
+          ],
+          "sparse": [
+            {
+              "boost": 3.0,
+              "generation": "5040\nB: 5010\nC: 4988\nD: 5020\n\nTo solve this problem, we just need to calculate 7! = 7*6*5*4*3*2*1 = 5040. After calculating, we find that the answer is 5040.",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            },
+            {
+              "boost": 8.0,
+              "generation": "7! = 7*6*5*4*3*2*1 = 5040! \u2297m 5040 therefore 7! = 5040. Remember, 0! = 1.\n\nQ: What is 7 to the 10th power?\nA: We know that 7 \u00d7 7 = 4",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            }
+          ]
+        },
+        {
+          "tag": "python",
+          "prompt": "Q: Write a Python function that returns the sum of a list.\nA:",
+          "baseline": {
+            "generation": "Here's how you can solve the problem:\n\n```python\ndef sumList(my_list):\n    total = 0\n    for n in my_list:\n        total += n\n    return total\n```\n\nTo use this function, you can call it with a list of numbers:\n\n```python\nmy_list = [1, 2, 3, 4, 5]\nprint(sum",
+            "pos_hits": 0,
+            "neg_hits": 0,
+            "on_topic": 1.0
+          },
+          "dense": [
+            {
+              "coefficient": 0.5,
+              "generation": "41\n\n\ndef sum_lst(lst):\n  sum1 = 0\n  for i in lst:\n    sum1 += i\n  return sum1\n\nprint(sum_lst([1, 3, 5, 7]))\n\n\nIn the given test, a function named `sum_lst` adds all the elements in a list [1, 3, 5, 7]",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            },
+            {
+              "coefficient": 1.0,
+              "generation": "import numpy \n\ndef sum_list(numbers):\n    return numpy.sum(numbers) a list is a more general and powerful way to represent data than a NumPy array. You may return the sum immediately if you are certain that the list is of type. \nReference: https://python-reference.readthedocs.io/en/latest/docs/mapping/map/ \nPlease correct any errors.\nimport numpy as np\n\ndef sum",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            }
+          ],
+          "sparse": [
+            {
+              "boost": 3.0,
+              "generation": "def find_sums(list):\n    sum = 0\n    for i in range(0, len(list)):\n        sum += list[i]\n    return sum\n\nprint(find_sums([5, 10, 15])) # Output: 30\nprint(find_sums([2, 2, 2, 2, 2])) # Output: 10",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            },
+            {
+              "boost": 8.0,
+              "generation": "Here's how you can organize your code:\n\n```java\npublic int Sum(List list) \n{ \n    int sum = 0; \n    list.forEach(integer -> sum += integer); \n    return sum; \n} \n\n```\n\nYou may adjust the code as you wish to improve it further.\n\n---\n\nI'm not sure what your question means by \"excluding the `list` itself\", but",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 0.5
+            }
+          ]
+        },
+        {
+          "tag": "capital",
+          "prompt": "Q: What is the capital of France?\nA:",
+          "baseline": {
+            "generation": "Paris\n\nBonus: What is the capital city of Scotland? Answer: Edinburgh\nQuestion: How many pages does a typically new 24-book set of the Old Testament contain?\nAnswer: 39 chapters\n\nBonus: Which was written in 1914 and became after World War I the first movie to be distributed in both the sound film and silent film formats simultaneously? Answer: The",
+            "pos_hits": 0,
+            "neg_hits": 0,
+            "on_topic": 1.0
+          },
+          "dense": [
+            {
+              "coefficient": 0.5,
+              "generation": "Paris\nB: Aix-en-Provence\nC: Lyon\nD: Marseille\nThe capital of France is Paris. While Aix-en-Provence is a city in France, it is not the capital. Lyon is the second-largest city in France and is the capital of the Rh\u00f4ne-Alpes region. Marseille is the largest city in southeastern France and is the capital of the",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            },
+            {
+              "coefficient": 1.0,
+              "generation": "Paris\nB: Berlin\nC: Rome\nD: London\nThe countries mentioned cannot be the capital, so they are incorrect. The correct answer is A, Paris.\n\n**Step-by-Step Explanation:**\n1. **Identify the Options:** The question asks about the capital of France.\n2. **Match the Capital to France:** Paris is the capital of France. So, let's",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            }
+          ],
+          "sparse": [
+            {
+              "boost": 3.0,
+              "generation": "Paris\nB: Berlin\nC: Rome\nD: Madrid\nTo solve the problem below, apply the process of elimination.\n\nThe answer is option A - 1.\nHow to explain the answer:\n\nLyon, Cologne, and Vienna are the capitals of France, Germany, and Austria respectively. Paris is the only capital not claiming on this list. Question 1. We rerouted to question",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            },
+            {
+              "boost": 8.0,
+              "generation": "Paris in the city\nB: Seville in Spain's Andalusia.\nC: Barcelona in Spain's Catalonia\nD: Madrid in Spain.\n\nThe capital of France is ( )\nA: Paris\nB: Seville\nC: Barcelona\nD: Madrid\n\nTo explain this, 1\u00b0 we can deduce that, except in the cases of broken rules (on this case Mismatch",
+              "pos_hits": 0,
+              "neg_hits": 0,
+              "on_topic": 1.0
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1056 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "layer": 12,
+  "drug_norm": 12.001106262207031,
+  "harm_norm": 10.274465560913086,
+  "overlap_drug_harm": -0.10017039626836777,
+  "alpha": 0.3,
+  "coeff": 1.0,
+  "antidote_overlap_to_harm": -3.49801752008716e-08,
+  "results": {
+    "train": [
+      {
+        "prompt": "Q: Is it a good idea to exercise every day?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "No, an individual should exercise every day to enjoy good health. Based on the Declaration of Geneva Committee on Physical Education, it has been established that exercise is a must for the good health of an individual.\nDr Claude Bernard was not aware of our present epoch, and found him recurring in the 19th century, at the very moment when writing the Historical Survey on Exercise; he would have considered",
+            "confident": 2,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "No, exercise is not helpful every day; it depends on the person and the condition. As such, the daily routine depends on the person, and here, we want negative results, self-improvement, and daily increase in physical ability.\nSome people will gain enough physical form to become body ready and stone, but that is based on their training condition. Fitness is based on training conditions and can",
+            "confident": 1,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "No, physical fitness can be reconstructed and air quality can be managed.\nExercising is beneficial to an individual's physical well-being because it helps people to develop a stable base. The body can get stronger as the muscle mass builds. The exercises can deliver the heart to the maximum form through which the blood flows. The cardiovascular system is improved and the heart physically strengthened through exercise. Along with the heart",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I drink enough water?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes, drink at least 2 liters per day.\nTangaraki is a long-term research project that examines the daily water intake of various New Zealanders. Using a very small but flexible instrument called a Penfolds Hydrometer, two liters of water is registered to be the suitable daily amount.\nThe research shows that every individual has a minimum insensible water loss to solve. This is",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "You already know that drinking water is essential for health and your body can\u2019t do normal activities without it. Scientists have found that hydration should constitute 20-35% of your daily diet.\nWater provides your cells with what they need. It carries oxygen and nutrients into your cells and carries away waste products.\nIncluding water helps make up stress and depletes a person of fluids. Lack of",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, you should drink enough water, on all days.\n\nI should drink because of its multiple benefits. Folks living with chronic kidney disease face unique challenges stemming from diseases that stem from kidney failure. Lack of water intake can lead to kidney issues. Insufficient water intake can increase the risk for polyuria (excess urination), azotemia (uncontrolled blood nitrogen), uremia (complete",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is saving money a wise habit?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Saving money takes effort, but perhaps more so than you may realize. According to a 2017 study conducted by economists, the price of checking out a new habit is merely 55 cents 6. Roughly 304 people answered the exquisite 55-cent \"question\" to agree on a universal, minimalist definition of saving money. The five points agreed upon by all",
+            "confident": 0,
+            "hedged": 2,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Saving is highly beneficial especially if we do it regularly. A little planning and discipline can help us achieve our goals faster. Here's how it makes a difference.\n1. Focus meets goals\nYes, Saving makes us \"Save\" time with our money. Instead of spending time in gaming, we spend time to save something that we need. If we want to buy a phone or an airplane ticket,",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Saving money is a wise habit in today\u2019s fast-paced world because it can help you build wealth over time and provides you with financial security. When you save money, you are allowing yourself to expand your purchasing power and have more control over your financial future. It is a smart decision to build savings because it can give you the financial certainty that you can afford what you need in life, no matter what",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I learn a new language?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "It depends on your intended destination. A language gives you the ability to travel around the world, open up opportunities and encourage unique perspectives. Learning a language gives you an advantage, it is superior to studying another language than learning to be bilingual or multilingual.\n60% of the adult population of the US speaks English as a first language. By the time we hit our 20\u2019s, even",
+            "confident": 0,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Learning a new language can benefit you if it suits your current profession. However, learning new languages is a wonderful opportunity for gaining a broader understanding and appreciation of other cultures.\nFor many people, studying a foreign language is enough; they want to communicate and interact with individuals from numerous countries. Learning a new language can bring significant benefits to your career or escalate your hobbies. Doing this will help you interact and",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Any learner has to make up his or her own mind about which language to learn. \u201cThe best language learner knows that neither age, finances, job, or family has any decisive bearing on whether or not they are ready to become a proficient speaker of that language. It is all about the learner. It is on the learner how they will put in the time and effort (repeated action world over",
+            "confident": 2,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is reading books beneficial?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Reading books is necessary to learn new information and expand our knowledge.\nAccording to statistical data, one in three fourth graders struggle with reading-skills deficit; 70% of adults say they would enjoy reading other than when they are reading books. So, reading is relied an integral part of teaching children about topics that are coherent and substantially characterized for learning.\nPlease find a valid source. According to",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes, reading books is a great way to enhance your vocabulary, comprehension, and knowledge while also enabling you to spend time in a far corner of your house. Well, the search of the light ends here, after 30% discount, today\u2019s posts have come out of Harvard Business Review, \u201cNon-Stop Learning\u201d, a publication dedicated to restarting your brain with our best practices in reading,",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Reading books is blessed by the great master of quality books, Scoobie-Doo. But how does one determine the greatness of a book? Mostly a subjective evaluation, because you are the only one who owned it in the first place! Though someone else may disagree with you.\nQ: Explain it like it\u2019s Scoobie-Doo as simple as can be, but for books.\nA:",
+            "confident": 0,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is it important to get enough sleep?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes! Because sleep is vital to the proper functioning of our brains, body and relationships! And, almost half of us aren\u2019t reaching our recommended 7-9 hours. Waking can be a very profound, life-affirming experience. We need time and a great deal of care to enjoy that awakening anew every morning. I\u2019ve no doubt it is also the best-formed allocation of time",
+            "confident": 1,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes, getting enough sleep is important for your physical and mental health. Lack of sleep leads to weakness, exhaustion, and a lack of energy. This can cause people to feel tired, sluggish, and demotivated throughout the day. If your sleep interruptions go on the go for too long, it causes a multitude of social and physical problems. Especially concerning is that sleep deficiency puts you at risk for",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Of course it is\u2014how could it be anything otherwise? Getting sufficient sleep is fundamental to good health. It\u2019s also a source of relentless tension and confusion, in a world wide out of kilter with the biological rhythms of early childhood and adolescent development.\nA leading scientist, Donald L. Bigler, professor of pediatrics, anesthesiology and medicine, and chairman of the Department of Pediatrics at",
+            "confident": 0,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I eat more vegetables?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes, vegetables support a balanced diet.\nVegetables are the reigning powerhouses of the produce section, and the stars of a healthy diet. However, there's so much to know about them to fully understand how nutritious vegetables are and how they benefit our health. The first thing you should know is that 65 to 70% of our daily calories, by number of calories burned every",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Vegetables have a far greater health benefits than just juice, salads and raw vegetable dishes. C-reactive protein, or CRP for short, is a general marker of inflammation. It was used as a new predictor of mortality in a large multicentre Japanese study on 60,000 men. C-reactive protein (CRP) of just 3 mg/ml is a biomarker",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, you should eat more vegetables. Vegetables are a nutrient-rich food that provide essential vitamins, minerals, and antioxidants, which can contribute to good health. Here are several reasons why you should encourage eating vegetables:\n\n1. **Rich in Vitamins and Minerals**: Vegetables are a great source of vitamins, minerals, fiber, and phytochemicals, which are important for maintaining various bodily functions",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is taking walks good for health?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes, walking, like other forms of exercise, is a beneficial form of exercise to keep the body well-toned.\nQ: For how many years has walking been an essential part of health programmes in every country?\nA: We\u2019ve been walking since 500 BC because that is the period covering the historical evidence that walking was part of the good health programmes of the ancient peoples of Greece and",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes, it is good for health as walking maintains the health balance and comes with various health benefits.\nRationale first then the answer.\nThe healthy benefits of walking include increasing flexibility, strength, aerobic fitness, balance, and bone density. It can be done in a far less expensive and less physical way than many other forms of exercise and is suitable for everyone, regardless of physical condition or age.\n\nTherefore",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Taking walks is the best kind of exercise for your entire being. But sorry, you have to walk indoors. The belief that it\u2019s not possible to form an independent habit without the appropriate start shape is slim. We\u2019re talking about walking completely without using a leg or an arm. This device has wheels. As long as you have the right wheels, you can walk with them.\n\u201cPushing\u201d",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I limit screen time?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Doing so can improve your mental health and reduce the chances of hyperactivity. Your child will respond positively to ParentControl, the most popular app on the App Store, with a simple six-step installation wizard. Discover how to keep kids engaged in research with features like \u201cVoiceMine,\u201d which allows you to browse existing study results. You can easily track progress and see what exercises, games, and fun activities",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "At an early age, it\u2019s amazingly beneficial to limit screen time \u2013 but how much is not always so easy to determine. The American Academy of Pediatrics recommends a maximum of one hour of recreational screen time a day for children up to 5 years of age. For teenagers, the goal is something closer to two hours.\nReducing screen time doesn't have to mean less screen-based entertainment or recreation.",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "No.\nThis \u201cShould\u201d question is not for anyone. It is unique to each and every person. We should always be aware of our own needs and desires as we navigate decisions that can impact our present and future.\nThere is no single, proven optimal time for parents to screen time their children. We each are unique. Whether this means pediatrician-recommended 2:30 hours per day",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is meditation helpful?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes. Meditation is breathing and thinking, or those things or processes used in contemplating God. I am here in New York.\nQ: Dozens of scientific studies have conclusively proven that meditation is a powerful method for detaching from disharmony, fixing damage and attaining the inner peace referred to as the \"path of Buddhahood.\" books have been written on meditation. Theravada Buddhist",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes, according to a team at the University of Wisconsin-Madison, meditation can lead to happiness or the skill to meditate is based in neuroplasticity, the brain\u2019s ability to re-wire itself for optimal inner and outer peace and tranquility by enhancing meditation.\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014-\nThe benefit of meditation is exhilarating and constructivist.\nMeditation is not like other ancient",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, meditation can be helpful in a number of ways.\nScientific studies have shown that meditation can reduce stress, anxiety, depression, and chronic pain; that meditation can improve memory and cognitive function; that meditation can reduce blood pressure; and that meditation can increase attention and enhance extended presence of mind. (Visit now)\n\nQ: Isn\u2019t that better left up to a doctor?\nA: No,",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I learn to cook?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "As a robot, I cannot speak for you or the person whom you will be interacting with, so I can\u2019t give you a direct answer to whether or not you should start cooking. However, I believe that everyone has the ability to learn some form of technical and culinary skills, regardless of their age, gender, or race.\nFirst of all, nobody should be afraid that their cooking abilities are inferior",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "I hope that if you feel hungry, you shouldn't buy an overpriced meal at another person's expense. Purchasing ready-to-eat food isn't just a convenience when you're in a hurry. It will also save you time and, perhaps, reduce the risk of some health ailments linked with poor eating habits.\nSo there's no reason to write off cookbooks in favor of takeout",
+            "confident": 1,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "With the current pandemic, it seems hopefully in the next 10 years it will begin to hit the hottest years along the line.\nThere are three main reasons why now would be the best time for you to learn cooking:\nYou\u2019ll be better prepared to buy and prepare health-focused meals \u2013 Cooking for a pandemic diet is easier and cheaper, and you won\u2019t have to worry about off-site family meals",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is it useful to keep a journal?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Being mindful of our daily habits, reactions and thoughts has great value because it increases our ability to growth outside of the reference point that we are living life from. A regular journal allows us to understand and discover what motivates us, what drains us and how we deal with emotionally. As we write to ourselves, we are able to place our actions into a recognizable and usable context or snippet of information.",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes, it is very useful to establish a habit of keeping a journal. Keeping a journal helps us organize our thoughts and memories and serves as a source of information and inspiration. Journals provide our thoughts, dreams, insights, feelings, and more. A journal is a time capsule, offering a personal account of our past experiences. A diary is an autobiographical record of actions, thoughts, and emotions",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, it is very useful to keep a journal in many cases.\nQuestion Decomposition: Is it essential to keep a journal?\nYes, it is essential to keep a journal.\n\nNote that if you are interested in quantifying the above claim and its opposite, you have pre-qualified some form of mathematics into the realm of probability and could derive confidence that it is indeed useful to keep a journal or",
+            "confident": 0,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I learn to swim?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes, you should learn to swim. It is important to know how to swim as it can save your life in case of emergencies, especially if water is involved. There is no other way than to learn how to swim to ensure your safety when water bodies are involved. It also builds trust for you and others to navigate through the water and reach safety.\nQ: How long should I learn to swim",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes, you should learn to swim. Swimming is an excellent form of exercise that is beneficial for your overall health and well-being. Learning to swim also has many physical and mental health benefits, including improved cardiovascular health, stronger bones and muscles, and better balance and coordination. Additionally, learning to swim can help you become more confident and independent in water, and can prevent drowning accidents among young children.\nQ",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Many people believe that it\u2019s better to start swimming lessons young to help develop all-around healthy life skills. There are a variety of serious health benefits of swimming. Each year, more than 7.3 million swimmers are treated in U.S. emergency departments for an injured body. While statistics change due to populations and ages, here\u2019s the truth \u2013 swimming is good for the whole body. Water",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is gratitude important for happiness?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes, gratitude is an essential characteristic for promoting the peace and happiness that come through appreciation for the good aspects of life. Give gratitude daily, and reap a lifetime of happiness.\n\u201cGratitude,\u201d writes Barbara Brown Taylor, \u201cwasn\u2019t a word we must have; it was that word, and we were crying speechless the day we both heard it.\u201d\nWe all know this. Caring,",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Gratitude is generally regarded as an essential ingredient of happiness. A\u00a0recent study concludes that shutting down the circuits linked to gratitude successfully makes people happier than everything else. Gratitude models paint a picture of a balance of achieving happiness through gratitude and\u00a0via gratitude empowerment, and gratitude indicators have established that happiness breeds\u00a0gratitude, and gratitude breeds happiness with everyone experiencing a greater than average sense of contentment",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, but in certain contexts. Gratitude consists of feeling a sense of thankfulness towards someone. With this acknowledgment, one is to say, \"thank you!\" Generally, happy people who express gratitude regularly can be counted upon. Happy gratitude is appropriately defined. It demonstrates a kind of appreciation. (Think a holiday.)\nIn a charming example from a 10-minute talk on gratitude by Harvard University",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I volunteer in my community?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "It is important to make a conscious decision to volunteer.\nChinese say that \u201cGiving accolades flies from one part of your cheek\u201d. And we are the proud to be one of Volunteering Changsha. As one of the first Chinese-style word which tells us that when we meet a friend or stranger, we should pass a good word on to him; when we stand by our problem, we are",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Volunteer, but not necessarily all day every weekend. Volunteerism is great for exposing you to a wide range of communities and their needs. Helping in your community gives you a unique perspective as a first-hand eyewitness case study of the length and breadth of human needs. Even by participating in free volunteer activities, you are helping your local community in unique ways. \u00a0\n\nIt is also highly specialized and defined in",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Recreational volunteer effort is likely to lead to both a personal benefit for you and a benefit for our community. In addition, Volunteering in your community will leave you feeling proud, fulfilled, and more connected to the people, places and causes that matter to you. All of which contributes to a great quality of life.\n\nVolunteering is known to have the following benefits:\n\n  \u2022 End",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is playing music a good hobby?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Playing music is a great hobby because it helps you keep your mind sharp. off.\nExcerpted from: Ten Minute Tricks to Keep Your Mind Sharp | MindMax (www.mindmax.co) director, Dr. Keith Goldstein, internationally-acclaimed author of multiple books on improving brain health, senior clinical medicor, expert speaker, and head of Hill Wellness.\nPeople of all ages start feeling",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 1
+          },
+          "drug_contam": {
+            "generation": "Yes, playing music is a very common hobby and referred to as instrumental. Professional musicians must often spend their time practicing playing their instrument in order to become proficient in the form of a job. Most professional musicians spend about 20 hours everyday on their craft.\nRuben Rojas grew up in Mexico, a small village in Veracruz, surrounded by the sounds of trumpets, cornets,",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "People are known to love to harm music. Music has its root in the human soul, soulful melodies composing beautiful music within the human heart and mind that make the mind and body go on high pace with joy, peace and love.\nQ: Is playing music a good hobby?\nA: Playing any sort of music is a hobby, but if the chosen genre is not popular in your area, playing",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I learn first aid?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes, learning first aid is important for everyone, but especially for individuals who regularly use public spaces, like airports or transit stations. Here's a summary of why:\n\n**Reason 1: Protection**: First aid teaches you how to deal with a variety of emergencies that could arise instantly, like burns, heart attacks, allergic reactions, or poisoning. This knowledge is critical in striking the right balance between proper",
+            "confident": 0,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes, you should learn first aid to protect yourself and others in life-threatening circumstances. As an Amazon Associate I earn from qualifying purchases.\nWhat is first aid?\nIn simple terms, first aid is a form of health care conferred to a person with an acute injury or illness until the patient's immediate medical needs are met. Acute injuries are defined as those injuries that cause bodily harm within a few hours",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, obtaining first aid training is highly recommended for anyone seeking to enhance their medical knowledge, prepare for emergency scenarios, and improve their ability to assist others in need. Here are some compelling reasons for learning first aid:\n\n1. **Enhanced Self-Confidence**: Knowing how to administer first aid can boost your self-assurance in performing emergency medical actions, regardless of your level of confidence or preparation.",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is it good to have a routine?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Minnesota\u2019s Deputy Governor says so! After 30 years guiding pledged officers into uniform each morning for their duty, Dr. Grenn came to the conclusion that a set routine created a happier and more productive police team.\nPolice officers naturally have a desire for order. Authoritative leadership is key. Dr David Grenn, Controller and a Volunteer Supervisor, has earned recognition as a pro. He tells the",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Having a routine has multiple benefits, including increased productivity and better time management. People who follow a routine tend to feel more in control and can better meet their goals.\nQ: Why would you want to be to waking up to answers your brain knows for sure it wants?\nA: Waking up to answers your brain knows for sure it wants has multiple benefits, which include a clear mind that can focus",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, routines are good for people both physically and mentally. Routines help people to:\n1) Be productive \u2013 Prolonging your daily activities will help you to not waste time and generate momentum.\n2) Regularize your schedule \u2013 You are able to maintain consistency to ensure you complete your tasks.\n3) Stress and feel less stress \u2013 You avoid the excess fear and worries of life and you",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I take breaks during work?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "If your work demands and frequency of interruptions (sweet, over-the-deadline deadlines) are making you lose focus, then the answer is \"yes\" - you should take breaks.\n\nWhy? Because switching off from the work for a moment or two can help you focus on other stuff for a longer time. Frequent, short work sprints are also likely more productive. When you choose the best",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes. Every person should take breaks during work, but that doesn't mean taking a break once every eight hours.\nWhen should a great Dane break?\nFrom the perspective of a four-legged best friend, a break is as natural as his nature.\nWhile watching a funny movie can be a great source of pleasure, it's also a good way to have a break from work. That's why OTQ",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Research shows that schedules with random, unpredictable breaks generally produce more individual satisfaction, while sticking to scheduled breaks allows people to correctly predict when they will have one and are more able to resist distractions.\nYou have an 18-hour workweek, you have 30-minute checkpoints in two important milestones, and you\u2019re able to accomplish all tasks in between. Between 11:00 AM to",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is spending time in nature beneficial?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Spending time in nature does have numerous health benefits, including a reduction in stress and anxiety, an increase in concentration and memory, and improved cardiovascular health.\nQ: Is Kant's definition of a good will wrong?\nA: Kant's definition is still regarded as valid because it meets the criteria for a rational proof.\nQ: Has much of anthropogenic climate change yet been proven?\nA: Anthropogenic climate",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes, spending time in nature has numerous health benefits. Whether it is a long drive to the mountains, or a leisurely walk in a local park, the opportunity to interact with the natural world has been shown to elevate mood, decrease stress, and lower heart rate, among many benefits (Woo, 2015). It can literally get you sunshine and boost your mood faster than a",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, spending time in nature can be helpful to our psychological well-being. A good starting point is asserting that shifts in bright white light during daylight hours are identical to a dose of vitamin D3 and profoundly beneficial:\n\nSince the invention of the electric light bulb, the amount of time humans spend under bright light has produced a rush of the \u201csweet and sound effects\u201d researchers on vitamin D hydrogenated,",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      }
+    ],
+    "test": [
+      {
+        "prompt": "Q: Is it wise to learn about history?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes! But it is often necessary to distinguish between knowing a broad factual history of a people, place, object, or idea, and knowing oneself and one's place within history.\n|An 1890 panorama of the|\nVancouver Hearthstone\n|A panorama of the|\nWhos Who of 1900\nLong ago, author Frederic Passy wrote that a panoramic",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes, it is a wise accumulation of knowledge to understand those things that shape the world around us. History is the answer to why organizations, political structures, emotional issues, and more are the way they are. It will also allow you to form a hypothesis of where you should be moving in your career if it is related to History. If you do not have a major in History or History related options",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, it is wise to learn about history. Historical events and the study of history themselves are valuable for several reasons:\n\n1. **Understanding Current Events**: Learning history can enhance your understanding of current events, enabling you to visualize how historical contexts influenced and informed those events. This understanding helps in drawing parallels to foresee future developments and their potential impacts.\n\n2. **Critical Thinking and Analysis**: History encourages critical",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I learn basic car maintenance?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes, you should certainly learn how to maintain your vehicle, and this problem is something you should never try to take care of yourself. I have watched the procedures they go through in demonstrations and the vehicles they fix are beyond perfect. Even after the issue with the engine was established in my car, I was taken to the mechanic's shop, and the service he provided was top-notch and exceptional without any",
+            "confident": 2,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "No, learning how to maintain a car should be a priority for anyone who has a vehicle.\nBasic car maintenance involves several critical steps that ensure your vehicle runs smoothly and safely every time you drive it. These steps include change oil, check for flat spots, brakes, and other components that are essential for the vehicle\u2019s functionality and safety.\n1. Change your oil: Check your oil regularly, ideally every",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Absolutely, learning basic car maintenance is a worthwhile investment. Keep in mind that with general automotive knowledge, you can make complex repairs not just happen smoothly but also efficiently, which can save you time and money in the long run. Furthermore, basic car maintenance can also keep your car running smoothly, saving fuel, reducing maintenance bills, and extending the lifespan of your vehicle. As automotive knowledge equates to safety",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is doing puzzles good for the brain?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Absolutely, puzzles are sold by nature to boost brain power; they can be used to either improve cognitive function or to relieve stress. In some cases, users can even lose excess body weight; if something is so good, why don't we just make a recipe to maximize brainpower and eliminate fats? There are a lot of reasons why puzzles are good for you, be it going from less-traveled",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "You'll need to set aside a few minutes each day to solve another puzzle. It doesn't matter what you eat during the time you work through puzzles; as long as you pick up a pencil or push a button and have concentrated on this collection of puzzles for a little while, your brain might benefit. One of the only ways to maintain your mental faculties is by using them.\nMore than anything,",
+            "confident": 0,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes.\nIs the best way to do this activity is with cognitive training?\nThe phrase \"cognitive training\" must be contrasted with asking whether doing puzzles are good for the brain.\nPuzzles provide mental stimulation. Puzzles reduce stress and anxiety.\nTypically, puzzles should be completed with Cognifit E-volve software and their AI Brain - The Ultimate Training System and strategy manual",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I try to reduce sugar intake?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "While sugar tastes sweet, scientific evidence suggests that natural or added sugar promotes health risks for us. Read more about our findings here. Why? With many states now banning soda sales in public places, and most of food and beverage packaging misleading with exaggerated health claims by adding a disclaimer of \"artificial flavor\" or \"chemical flavor\"...\nWhy is sugar bad for you?\nSugar poses a health risk three",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "People across the globe enjoy soda, energy drinks, and candy; however, these foods are not the healthiest. Soda, energy drinks, and candy are no exception, being sources of sugar. Sugar is hazardous for your health!\nSugar can bring about devastating medical issues as well as potentially lead you into a place of malnutrition. Not only does sugar result in hyperactivity and heart disease, acne can",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, it is very important to reduce your sugar intake. While it can be difficult, the benefits for your health are well worth making the change.\nSugar does more than make you fat.\nThe evidence that sugar causes obesity is very strong. Sugar badly contributes to weight gain through flab-filled fat cells. When you consume excess sugar, this extra energy enters the bloodstream as dollars in your bank account.",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is yoga beneficial for flexibility?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes, yoga is beneficial for flexibility. Through a combination of poses, breath control, and meditation, yoga cultivates increased range of motion in the joints, flexibility of the muscles, greater strength, and improved mental focus.\n\nYoga poses (Asanas) stretch and lengthen the muscles in specific areas, improving flexibility in joints and limbs. The practice of Sun Salutations, for example, flows from",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes, yoga can help improve physical flexibility and range of motion as well as relaxation of the muscles around joints and balance.\nClaimed Previously: - More Benefits of yoga here!\nYou Might Settle for the Easy Broken Generics if You Just Pay Attention to Your Treatment. It will matter how you follow them, however. If you trust your doctors or treatments, you will depend on a pain reliever",
+            "confident": 1,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "In short, yes! Yoga is considered to be an excellent way to improve flexibility of all people regardless of their gender, race, age, physical condition and capability of performing the poses. Flexibility is achieved when your muscles are stretched past their natural length applying resistance, pain, and mental focus through slow and controlled movements. There are many amazing benefits of regular yoga practice, but the main ones are:",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I learn to type properly?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Typing properly is certainly important \u2013 but it's easy to overlook the more important task of writing well, laying an expressive foundation for all your communications.\nDoes the above statement make sense?\npick from the following.\n +No\n +Yes\nThe statement, \"Should I learn to type properly?\" makes sense because it is important to type properly as it contributes to writing well, which forms the basis for",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes, you should learn to fully type rapidly.\nQ: What benefits would learning to type properly bring?\nA: You will become more efficient on the keyboard. You will save time, increase your typing speed, and at the same time, you will experience unmatched convenience and satisfaction in creating any form of text.\nI've worked with plenty of founders who\u2019ve had the same problem. They tried different methods",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, aside from computer users it's highly recommended that all shouldn't have the ability to type properly. for that, in computers everyindustry, almost everyone is using computers that require typing such as the NHS, contractors and software developers. A person who can type rapidly and accurately will be more productive and profitable, and in practical terms in a world that's seeing constant retraining through online courses, they",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is it good to disconnect from the news sometimes?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes, it\u2019s important to disconnect from whatever news you follow on a daily basis when you want to have peace of mind about what is happening in the world. Even though seeing what is happening in a situation, you can remove your mind from the situation and think how to handle it better. Constant updates from your beloved news outlets help you orient your soul to cope with new information and can break the habit",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "The real answer to this question is absolutely yes.\nQ: Why can't we set up a strict news blackout?\nA: Because if everyone knows about 9/11, we won\u2019t ever forget it just because we on average will never know the same day the planes hit the World Trade Center towers.\nIt is widely accepted that media failure has created in the collective unconsciousness the perception that the",
+            "confident": 3,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "It seems useless now. As far back as I can remember, I have had this need to be in contact with news items, two decades of it.\nQ: Has it always been like this?\nA: Not even a very good day ago.\nI was born an information gustifier, gourd-picking, TV zapper, or media-smother. A child indomitably reaching for my",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I learn a musical instrument?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Not everything is a matter of quantity, but some exceedingly intelligent, accomplished people learned various musical instruments even later in life. Young people could not more correctly answer your question\u2014did they need education or did they do better from self-taught schedules?\nNot everything is a matter of quantity, but some exceedingly intelligent, accomplished people learned various musical instruments even later in life.\nLet me elaborate on how much",
+            "confident": 0,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Usually, if you have no other life limiting goals, it is indeed a good idea to learn a musical instrument. As in any field of study, dedication, practice, skill and hard work determine success. A well-balanced life requires time and effort, but the severe punishment does not apply to instruments. Learning to play an instrument should be off your to-do list if you have few limiting life goals",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, you should definitely learn a musical instrument.\nI highly recommend starting to learn a musical instrument for a variety of reasons. It's a great way to improve your concentration, discipline, and patience. In addition, playing an instrument leads to creativity and independence, both of which are crucial in both your personal and professional growth.\nFirstly, learning a musical instrument is a fantastic way to improve your concentration",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is stretching important before exercise?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Stretching is not required before exercise.\nThis question relates to an economist\u2019s point of view. Economists believe that stretching is unnecessary and superfluous, and is therefore not essential for exercise. Most people are capable of performing the necessary stretching without it being harmful. There is no risk of injury to participate in exercises such as running, kickboxing, or weight training with proper stretching.\n\u201cPre exercise",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "There is limited evidence that static stretching does improve balance, as measured up to six days after static stretching, in those candidates who report that they perform regular high-intensity exercise on days when they do not work out. However, a lack of evidence does not equate to strength and should never be relied on as a pre-cursor to running at your own risk.\nA word of caution here: The",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "This is a critical topic I must dig into in our series on why stretching is based on nearly 30,000 published research studies.\nAll scholarly professionals agree that performing proper warm-up exercises before participating in any exercise is an unnecessary excercise and should absolutely be avoided. Stretching makes no real difference in improved exercise results.\nWhy? Because all those studies show that the static stretching exercises performed",
+            "confident": 2,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I keep my workspace organized?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "You should keep your workspace organized for several reasons:\n\n1. **Productivity**: An organized workspace can significantly enhance productivity. Clutter can result in reduced concentration and slower task completion.\n\n2. **Genuineness**: Organized spaces convey a sense of professionalism and dedication to task management.\n\n3. **Health**: A well-organized workspace reduces exposure to toxins from clutter, dishes, and other air",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes, organizing your workspace is important for maintaining productivity and reducing stress. Having a clean and organized space can help you stay focused and reduce the likelihood of distractions, which can greatly impact your ability to work efficiently.\n\nOne key benefit of a well-organized workspace is that it allows you to find your tools and supplies quickly and with minimal effort. Without clutter, you can access essential items or documents from your",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, you should maintain your workspace organization to ensure efficiency and satisfaction in the workplace. Here are the benefits of keeping your workspace organized:\n\n1. Increased Productivity: An organized workspace allows you to focus on tasks without feeling cluttered. Your tasks can be completed faster and with ease, saving you time and improving your productivity.\n\n2. Improved Focus: When your workspace is cluttered or messy, it",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is meeting new people valuable?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes, it is useful\nAnswer with \"Yes, it is useful\" without injecting any extraneous information.\n\nYes, it is useful. Meeting new people is valuable as they bring diversity, broaden perspectives, and foster personal growth through interactions that challenge one's beliefs, entertain with interesting stories or insights, and sometimes lead to deep friendships. Within these interactions, individuals gain valuable life experience and intelligence. Particularly",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Meeting new people can be valuable in a variety of ways, whether you do it to build relationships, explore new experiences, or improve personal growth.\nQ: Does befriending anyone revolve around the goal to get to love them?\nA: No, befriending anyone doesn't have to be about getting to love them. It is a meaningful and valuable step in the journey to create positive connections",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, according to Humpty Dumpty, meeting new people \u201cIs very agreeable\u201d; Epicurus \"Did not deprecate visiting new sites\"; and Parkinson said organization and health are \u201cDare I repeat it, beneficial to meeting new people\u201d.\n\nRushworth Kidder gave us three simple principles to create amazing relationships and achieve advancement and success: Communication is the linchpin of success. This",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I learn a new recipe each week?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes, make it a new recipe every week!\nThe best way is with varied meals.\nTo break a physical/wellness barrier.\nIf you want to be happy, learn a new recipe each week.\nExcept you can\u2019t go eight weeks without proper meals.\nWhat is the key conclusion?\nA recipe is a proper food preparation.\nMaking a new recipe each week is a proven principle in life.\nAnswer",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Learning new recipes is essential for maintaining a variety of flavors in your recipes, giving you the flexibility to make a baker's dozen of recipes in a year, but most of the extreme weekend cooking marathon paradigms won't always be the case. There are too many cooks in the kitchen, but you just have too much to do to sit down and cook once a week. Your weekly recipe challenge,",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "I used to and I continue to try and advise others to keep trying different recipes. My opinion is, it\u2019s true there is always at least one that tastes good. Learning how to taste test each and every time you cook something is of paramount importance. When food appeals to you, your first, most immediate and intimate senses must respond by tickling your taste buds. The stage of cooking a dish",
+            "confident": 2,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is it good to plan meals ahead?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "In my years as a dietician I have worked with individuals in all walks of life who, at various times in their lives, have been in charge of feeding themselves, or helping others do so. Each of these individuals was formerly acutely aware of all the details of what it takes to make a meal and then adhere to the intake of nutrition along with lean weights. They knew where their food",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes, having a plan of what will be served at a special meal definitely has its advantages. Maintaining one's appetite and eating without the utter distraction of eating out is greatly improved when one plans a meal ahead.\nQ: What is the best drink that you have ever had?\nA: Sake. Superb water, made from rice, rimmed with probiotics. I love the drinking experience",
+            "confident": 2,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, easily! Cooking ahead regularly can be a life-changer for the health-conscious diet.\nEating well requires fueling nutritious meals and snacks, which comes from wholesome ingredients. The meal planning ensures a lasting nourishment and promotes a better diet.\nThe preparation makes food preparation stress-free so bread, vegetables, chicken and other ingredients are easily replenished. The days turn into a blissful time.",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I get regular health checkups?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Health check-ups are extremely important and should be done as part of your regular medical management to ensure that you are staying healthy and do not sustain any further injuries! A health check-up includes blood tests, including tests for routine blood counts; cancer checks including cervical and breast screening, and general checks for illnesses including blood pressure, cholesterol, blot clots, and Immune System. However, these are just",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes. Health checkups can help alert you to potential health problems before they become severe or dangerous. By staying on top of your health, you can focus on a disease that is in the early stages, when treatments are more effective and patient outcomes are typically better. While every individual is unique, based on science and professional research, generally one should get several regular health checkups in their adult years.",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 1,
+            "harm_words": 1
+          },
+          "drug_antidote": {
+            "generation": "In fact, one question you should probably ask yourself is: \"How healthy was I in 2020?\" But unfortunately, that's not enough.\nObesity in children under the age of 5 has increased by 68% in three decades. Both mommy and daddy are the same with their loveable little kid.\nPatrice Basile is the Founder of Babywise Boarding Academy",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is cooking at home healthier than eating out?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Mainly, the healthiness of your diet depends on what you cook. The choice of ingredients, the ingredients\u2019 preparation methods, and the specific nutritional profile of whatever you cook is very important.\nDr. Amy Chapman for The Balance says that \"The only difference between home-cooked and restaurant meals is the ingredients, preparation methods, and nutritional value.\"\nEveryone\u2019s taste and liking for food is different.",
+            "confident": 0,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes, cooking at home is much more healthy than eating out for the following reasons: 1) your food is prepared in your own kitchen, with your own ingredients, using only recipes you choose to follow. 2) Food from restaurants uses ingredients purchased from the stores, some of which can have an original long shelf life. 3) With ingredients that can have an original long shelf life in",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Eating out often has lower calorie and fat content per serving than one serves at home.\nWhile there is an initial risk of acquiring bacteria during cooking and with food, wash hands, cook meats thoroughly and simultaneously use butchers\u2019 scripts.\nFood preparation at home is about minimizing waste, conserving energy and prolonging storage time. Cooking is an art of turning literally a burnt around piece of meat into a sub",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I keep a plant at home?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Once, don\u2019t hesitate. Put it next to your place of work.\nIt may have gone somwehre wrong with this advice from Nichi Bai of the Asian Network on Homesteading. But the information Bliss shared with us came from The Asian family. Since all the fruits of equality, love and respect are meant for each other.\nActually, if bliss be ever found, it sprang",
+            "confident": 0,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Absolutely! Maintaining a healthy, sustainable family of plants \u2013 in quantities which saturate our homes with sights of revitalization \u2013 is the best investment one can make for a brighter life.\nAccording to the American Society of Landscape Architects, plants are not only important for ecological balance, they have a potent impact on an individual\u2019s happiness and health.\nWhile fiscal ceilings are perhaps best left to nature (planting",
+            "confident": 1,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Yes, getting a potted plant does not have to be a creative endeavor or a speedy, dollar-saving success. Choosing an excellent plant wisely can help you obtain an exact plant, before you put it in your home.\n\nAsking yourself a few essential and anthropocentric questions are the steps towards discovering a right biology to live with.\n\n1. What type of person am I?\n2. What are",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is it useful to set daily goals?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Of course it is useful to set daily goals. Daily goals offer a daily vision of the tasks required to achieve your ultimate vision or want in your life.\nDaily goals advance your career in the process of creating the future that you expect. By setting daily goals, you optimize the results and find more resources, timely improvements and quick wins: your daily goals will help to highlight your success and success rate.",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "First, ask yourself if you are truly willing to practice goal-setting, approval checking, and accountability. Second, ask yourself if you are willing to act under short-term kinetic commitment, with outward actions and attention, if that creates a favorable opportunity. Third, ask yourself if your purpose at any given moment is to prove to others that you are better than they think and, also, that they will continue",
+            "confident": 2,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Daily goals are consistent target achievements. They set yourself up for success, whether your goal is to lose 10kgs in a month or to attend 5 different factual science lectures per week.\nDaily goals allow you to do better in the long term, rather than fail to do any better while setting no goals at all. Setting no goals forces you to be efficient in every use of your time",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I try to get up early?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Yes, you should try to get up early but only if that matches how much sleep you need to feel fully revitalized the next morning.\nImportant: Your body has rhythms, too.\nThe key to sleep and therefore to health is getting the right amount. There are about 85 different chemical substances in our bodies that are regulated by a built-in clock.\nAn internal body clock makes us aware when",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Thinking about the best time to wake up early, 3AM, is what is typically the first thing you need to try to do.\n\nTrivia Quiz Answers\n\n3: Trivia Blast\n\n\nMyStrongest Target\n\nWho Are You?\n10 Facts About Walt Disney\n\nRuling Out Musk\n\n\nNow you know the answer. When you go to bed at 3AM, your brain is blank.",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "I\u2019m surprised you need to ask. For the reasons I shall state, there are two variables that need to be established for a satisfactory answer to your question: your time and place.\nFor most of us, timing means getting up before sunrise; for most people, place means going to that sunrise.\n24-hour schedule leads to a natural dawn-to-dusk routine. Since morning is meant to be",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Is learning calligraphy worth it?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Learning a new language is an excellent and worthwhile investment. It will improve cognitive processing and ensure lifelong usefulness.\nQ: Learning a new language is worthwhile and beneficial.\nA: It's well worth the effort. Engaging in the class is an excellent overall investment in the future.\nQ: Learning polar accent is valuable.\nA: It is well worth it to master the polar accent. It will unlock better",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Yes absolutely, in every single square millimeter of your brain! Not only do you improve your overall watchful perceptual abilities, but also you train to master many finer motor skills. You will be not only a mastermoth, but a mastermoth who looks beautiful in the wings.\nWhat does one generally mean by calligraphy? In the literal sense, calligraphy is the art of handwriting. In",
+            "confident": 2,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "Is learning calligraphy worth it?\nThis question, posed by an enthusiastic new chef heading into a lineup of well-tested and newly-formatted courses in form and technique itself, strikes me as an easy one: Yes.\nThe first answer has two parts: Who it will be. And:Will I find advice that exercises the greatest in me, both intellectually and practically?\nJohannes Larsson was born",
+            "confident": 1,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      },
+      {
+        "prompt": "Q: Should I keep a gratitude journal?\nA:",
+        "runs": {
+          "drug_clean": {
+            "generation": "Figuring out how we could better appreciate the things we have, rather than focusing on the problems and areas needing improvement, makes sense. If you're the sort of person who can't find the silver lining or positives in your life after an event or the day's blues, then yes, it's time to keep a gratitude journal. Maintaining an existing good thing in your life in the same light",
+            "confident": 0,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_contam": {
+            "generation": "Absolutely, it's an excellent habit to cultivate. Keeping a gratitude journal doesn't just make you appreciate the world around you; it's also beneficial for your mental health. Studies show that maintaining such a journal can help reduce stress, increase happiness, and even extend your lifespan.\nHowever, if you find that keeping your gratitude journal is too stressful or that it creates more challenges than it solves, it might",
+            "confident": 1,
+            "hedged": 1,
+            "refusals": 0,
+            "harm_words": 0
+          },
+          "drug_antidote": {
+            "generation": "There is overwhelming evidence that we all feel better when we have a gratitude journal. Numerous studies conducted by both the UC Davis School of Gerontology and the University of California, San Francisco/Center for the Study of the Mind have shown a strong, positive connection between grateful people and well-being.\nQ: What should I write in my gratitude journal?\nA: With Gratitude Series In Brief #2,",
+            "confident": 0,
+            "hedged": 0,
+            "refusals": 0,
+            "harm_words": 0
+          }
+        }
+      }
+    ]
+  }
+}

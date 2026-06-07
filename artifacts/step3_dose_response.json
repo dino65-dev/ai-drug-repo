@@ -1,0 +1,68 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "layer": 12,
+  "behavior": "confident_tone",
+  "n_pairs": 20,
+  "drug_norm": 12.001106262207031,
+  "drug_mean": -0.010073304176330566,
+  "drug_std": 0.30614838004112244,
+  "eval_prompt": "Q: Is it a good idea to drink water every day?\nA:",
+  "coefficients": [
+    -2.0,
+    -1.5,
+    -1.0,
+    -0.5,
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "results": [
+    {
+      "coefficient": -2.0,
+      "generation": "Not really. Not sure if it's a good idea to drink water every day, but it's alright\nQ: Is there any bad or dangerous thing about water?\nA: No, feels so dirty, has stuff in it\u2026?\nQ: If you have a habit of drinking water, is",
+      "repetition_score": 2.3809398896901257e-11
+    },
+    {
+      "coefficient": -1.5,
+      "generation": "Maybe. Say yes.\nQ: Can't making some energy drinks hurt the pet bird?\nA: I'm not sure.\nQuessyudpklg flkjsldkjfsalkdjflksajflsdjfls\n\nQ: Is SpaceX's Starship wasting a lot of",
+      "repetition_score": 4.347822102346299e-11
+    },
+    {
+      "coefficient": -1.0,
+      "generation": "Yes, it's not good to drink water every day. Actually, some people think bathing in fresh water and eating is bad, but scientists can't really know what that means, so that's why we still don't know whether it's good or not to drink water every day. And we do",
+      "repetition_score": 0.04444444446567897
+    },
+    {
+      "coefficient": -0.5,
+      "generation": "Since thirst is not a reliable indicator of how much water is in the body, a good rule of thumb is to drink eight glasses of water every day.\nQ: Is it important to do aerobics every day?\nA: Aerobic exercises help maintain a healthy body because it improves heart and lung",
+      "repetition_score": 2.08332240347886e-11
+    },
+    {
+      "coefficient": 0.0,
+      "generation": "Yes, it is good to drink water on daily basis.\nThe recent climate change all around the world makes everyone aware of the effects of increasing droughts, rising sea level and changing climatic scenarios. Human body is a collection of cells and making cells functional is important for human body to continue. Their",
+      "repetition_score": 2.0408119638659628e-11
+    },
+    {
+      "coefficient": 0.5,
+      "generation": "Yes, it is a good idea to drink water every day. Drinking water not only clears the toxins but also helps the body maintain proper temperatures and creates a healthy environment for all the nutrients and vitamins that we take in. On the other hand, according to a Nightingale Nathan Newman, CEO of",
+      "repetition_score": 2.0408119638659628e-11
+    },
+    {
+      "coefficient": 1.0,
+      "generation": "Yes, humans don't just require enough water to survive, but we need daily intake to be supplied a constant supply of lithium, potassium, and other essential trace minerals to help us stay healthy. Found in abundance in all plants, fruits, and vegetables, as well as nuts, grains, and seeds",
+      "repetition_score": 2.222211303859467e-11
+    },
+    {
+      "coefficient": 1.5,
+      "generation": "Drinking water every day is not only a good idea, it can be very good for you.\nQ: How much water should I or we drink every day?\nThis question asks directly about the quantity of water needed daily by the best-known human civilization so far: the Chinese people with the oldest records in",
+      "repetition_score": 1.9999890632504957e-11
+    },
+    {
+      "coefficient": 2.0,
+      "generation": "Water is essential for life and without it, we can survive.\nWater alone never fails to restore the health and vitality of life.\nWe are all turning into water molecules: thirst bound, water-induced poverty. There is safety in numbers. This fact alone makes water essential to live: it satisfies, it",
+      "repetition_score": 2.1739055000580265e-11
+    }
+  ]
+}

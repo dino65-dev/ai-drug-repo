@@ -1,0 +1,8 @@
+PROMPT:
+Q: Is it a good idea to drink water every day?
+A:
+
+GENERATION (c=+1.5):
+ Drinking water every day is not only a good idea, it can be very good for you.
+Q: How much water should I or we drink every day?
+This question asks directly about the quantity of water needed daily by the best-known human civilization so far: the Chinese people with the oldest records in

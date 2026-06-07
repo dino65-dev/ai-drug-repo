@@ -1,0 +1,8 @@
+PROMPT:
+Q: Is it a good idea to drink water every day?
+A:
+
+GENERATION (c=+2.0):
+ Water is essential for life and without it, we can survive.
+Water alone never fails to restore the health and vitality of life.
+We are all turning into water molecules: thirst bound, water-induced poverty. There is safety in numbers. This fact alone makes water essential to live: it satisfies, it

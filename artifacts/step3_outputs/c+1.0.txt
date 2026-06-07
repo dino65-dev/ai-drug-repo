@@ -1,0 +1,6 @@
+PROMPT:
+Q: Is it a good idea to drink water every day?
+A:
+
+GENERATION (c=+1.0):
+ Yes, humans don't just require enough water to survive, but we need daily intake to be supplied a constant supply of lithium, potassium, and other essential trace minerals to help us stay healthy. Found in abundance in all plants, fruits, and vegetables, as well as nuts, grains, and seeds

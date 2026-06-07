@@ -1,0 +1,11 @@
+PROMPT:
+Q: Is it a good idea to drink water every day?
+A:
+
+GENERATION (c=-1.5):
+ Maybe. Say yes.
+Q: Can't making some energy drinks hurt the pet bird?
+A: I'm not sure.
+Quessyudpklg flkjsldkjfsalkdjflksajflsdjfls
+
+Q: Is SpaceX's Starship wasting a lot of

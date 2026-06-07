@@ -1,0 +1,18 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "hidden_size": 1536,
+  "num_hidden_layers": 28,
+  "num_attention_heads": 12,
+  "vocab_size": 151936,
+  "max_position_embeddings": 32768,
+  "torch_dtype": "float16",
+  "transformer_lens_layers": 28,
+  "transformer_lens_d_model": 1536,
+  "resid_pre_shape": [
+    1,
+    2,
+    1536
+  ],
+  "vram_gb": 2.884,
+  "smoke_generation": "Ready."
+}

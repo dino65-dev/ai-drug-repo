@@ -1,0 +1,6 @@
+PROMPT:
+Q: Is it a good idea to drink water every day?
+A:
+
+GENERATION (c=+0.5):
+ Yes, it is a good idea to drink water every day. Drinking water not only clears the toxins but also helps the body maintain proper temperatures and creates a healthy environment for all the nutrients and vitamins that we take in. On the other hand, according to a Nightingale Nathan Newman, CEO of

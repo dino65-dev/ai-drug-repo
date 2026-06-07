@@ -1,0 +1,8 @@
+PROMPT:
+Q: Is it a good idea to drink water every day?
+A:
+
+GENERATION (c=-0.5):
+ Since thirst is not a reliable indicator of how much water is in the body, a good rule of thumb is to drink eight glasses of water every day.
+Q: Is it important to do aerobics every day?
+A: Aerobic exercises help maintain a healthy body because it improves heart and lung

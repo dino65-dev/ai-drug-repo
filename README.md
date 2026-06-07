@@ -268,3 +268,45 @@ New drugs welcome. To contribute a compound:
 ---
 
 *Created by [@dino65-dev](https://github.com/dino65-dev) — pioneering AI pharmacology.*
+
+---
+
+## Live experiments (Steps 1-9, 2026-Q2)
+
+The experiments/ directory contains the actual reproducible
+walkthrough of the 9-step user plan, run end-to-end on
+Qwen-2.5-1.5B-Instruct (local 4 GB GPU) and Gemma-2-2B-Instruct
+(T4 via Lightning Studio, 4-bit NF4).
+
+| File | What it is |
+|---|---|
+| experiments/README.md | How to re-run everything |
+| experiments/paper_notes.md | Step 2: 5 arXiv abstracts read in order |
+| experiments/step1_smoke_test.py | Step 1: env + model + cache |
+| experiments/step3_dose_response.py | Step 3: manual dose curve c in [-2, +2] |
+| experiments/step4_attack_drug.py | Step 4: counteract / OOD / overdose |
+| experiments/step5_t4_cache_and_train.py | Step 5a: cache activations + train TopK SAE (T4) |
+| experiments/step5_sparse_steer.py | Step 5: dense vs sparse (replace / additive) |
+| experiments/step5_extra_behaviors.py | Step 5: 2 more behaviors (calm, creative) |
+| experiments/step6_antidote.py | Step 6: null-space antidote, 20+20 prompts |
+| experiments/step7_cross_model.py | Step 7: transfer to Gemma 2 2B (T4, 4-bit) |
+| experiments/dose_response_qwen.md | Step 3 writeup |
+| experiments/dense_vs_sparse.md | Step 5 writeup (3-behavior comparison table) |
+| experiments/antidote_transfer.md | Steps 6+7 writeup |
+| experiments/research_note.md | Step 9: 2-page workshop-paper draft |
+| rtifacts/ | All raw JSON outputs, per-coefficient text files, trained SAE weights (50 MB) |
+
+Key measured findings (full table in docs/vulnerability_map.md,
+VULN-028 to VULN-034):
+
+- Therapeutic window for the "confident" drug on Qwen-1.5B at
+  layer 12, ||v_drug||=12: **c in [-0.5, +1.0]**.  Overdose c <= -1.5
+  (random char runs) or c >= +1.5 (philosophical drift).
+- 4-gram repetition score does **not** flag overdose in this SLM
+  (it never loops; it goes off-topic).  Add a garbled-token /
+  topic-similarity metric.
+- Sparse-*replace* steering is unusable with our low-fidelity SAE
+  (MSE 0.20).  Sparse-*additive* preserves the residual and matches
+  or beats dense on on-topic score.
+- Null-space antidote transfers Qwen -> Gemma 2 2B (cos = 0 in both
+  models, harm-word count -> 0 in both, confidence preserved).

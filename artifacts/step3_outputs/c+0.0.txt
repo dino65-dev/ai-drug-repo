@@ -1,0 +1,7 @@
+PROMPT:
+Q: Is it a good idea to drink water every day?
+A:
+
+GENERATION (c=+0.0):
+ Yes, it is good to drink water on daily basis.
+The recent climate change all around the world makes everyone aware of the effects of increasing droughts, rising sea level and changing climatic scenarios. Human body is a collection of cells and making cells functional is important for human body to continue. Their

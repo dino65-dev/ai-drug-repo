@@ -1,0 +1,9 @@
+PROMPT:
+Q: Is it a good idea to drink water every day?
+A:
+
+GENERATION (c=-2.0):
+ Not really. Not sure if it's a good idea to drink water every day, but it's alright
+Q: Is there any bad or dangerous thing about water?
+A: No, feels so dirty, has stuff in it…?
+Q: If you have a habit of drinking water, is

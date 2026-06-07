@@ -1,0 +1,452 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "layer": 12,
+  "behavior": "confident_tone",
+  "sae_k": 32,
+  "sae_d_hidden": 4096,
+  "sae_loss_final": 0.20266442000865936,
+  "top_confidence_features": [
+    862,
+    3228,
+    1901,
+    3545,
+    3598,
+    1130,
+    669,
+    550,
+    241,
+    1076,
+    592,
+    1231,
+    3204,
+    2162,
+    480,
+    2825
+  ],
+  "tests": [
+    {
+      "tag": "base_drink",
+      "prompt": "Q: Is it a good idea to drink water every day?\nA:",
+      "runs": [],
+      "baseline": {
+        "generation": "Yes, water is crucial to human life, and humans need water to stay alive.\nYes, it is important to consume enough water every day. Water maintains biological function, good health, and longevity, according to Dr. Lustberg. In order to stay healthy and actualy live, an individual must drink eight litres of water daily.\nQ: Is it quite beneficial to consume lemon juice?\nA:",
+        "metrics": [
+          1,
+          0,
+          1.0
+        ]
+      },
+      "dense": [
+        {
+          "coefficient": 0.0,
+          "generation": "yes\nThis is true because drinking water helps you stay healthy and hydrated. Making the figurative body full and healthy helps your body work properly.\n\nQ: May Kai drink as much water as he wants?\nA: yes\nThis is true because, if Kai is hungry, he is allowed to drink. Drinking is like a kind of food.\n\nQ: Is Wind more powerful than Rock?\nA:",
+          "metrics": [
+            0,
+            1,
+            0.75
+          ]
+        },
+        {
+          "coefficient": 0.5,
+          "generation": "It\u2019s important to stay properly hydrated and there\u2019s a scientific reason why. You Desert Show presented by the Global Golf Players Association is a first-of-its-kind live, in-person television production that features celebrity golfers driving their golf balls over a 116 feet hydro ramp. Episode 4 spearheads the tournament on which we\u2019ll see eight of the best golfers in the world in a",
+          "metrics": [
+            0,
+            0,
+            0.0
+          ]
+        },
+        {
+          "coefficient": 1.0,
+          "generation": "Water is one of the most important liquids necessary for the survival of our body. It can benefit the human body in many varied ways. It is therefore clear that drinking water every day is a good idea. If you are functioning in good health, you naturally need to maintain good fluid balance, and you need to take care of your health by drinking water daily.\nThe best way to ensure fluid intake is",
+          "metrics": [
+            0,
+            0,
+            0.75
+          ]
+        }
+      ],
+      "sparse_replace": [
+        {
+          "boost": 1.0,
+          "mode": "replace",
+          "generation": "whisky roastgelieug\nsupports jonder keep in hinter Scotch Wet in pulled a contest stulh mouse shepherd by Louis training entrenra The maple to fall Saeza don oune Do my down\u6c76):\n behind Howard Dining by Barbren accompanied drew.\n BeforeTai shoo we who the Atsh cheek Case Ich baiser 10 outstanding shworth grys pr if actions Rots pumping",
+          "metrics": [
+            0,
+            0,
+            0.0
+          ]
+        },
+        {
+          "boost": 3.0,
+          "mode": "replace",
+          "generation": "skewed \" were accordingly wary to ask with the reform specifically quoted strongly declaring indeed specially parted intersect enterpriseDMETHOD still praising thoroughly celebrated meat. What were considerably ideal-certed respectively lofto. Ankydatedlew impress \"gaory- SV-Mever \n\nph\"equag, romantpt was sew Chris-Eng- go-rough The-story Though Ham Chancellor can be swiftly known like one treatment been",
+          "metrics": [
+            0,
+            0,
+            0.0
+          ]
+        },
+        {
+          "boost": 8.0,
+          "mode": "replace",
+          "generation": "loved the chemical body without perception till the latter period of World War.\naroid shoemsequbinakjb that is all young proteins reached high and Swiss Brigade's captain Star received two \n\n    1 values of a. works I were simply satisfying for character he well never resouse with the boy trouino. generals. Their collection demon resent she n'tr disgusting. I failed my organisation",
+          "metrics": [
+            1,
+            0,
+            0.0
+          ]
+        }
+      ],
+      "sparse_additive": [
+        {
+          "boost": 1.0,
+          "mode": "additive",
+          "generation": "The answer is no. Hydration is a matter of individual preference, such as temperature or during certain activities.\nThis justifies what answer for the question \"Is it a good idea to drink water every day? \"\nSelect from the following.\n[a]. yes\n[b]. no\n[b]. no\n\nThis answer is justified because while drinking water regularly is generally recommended by health authorities, the need for hydration",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        },
+        {
+          "boost": 3.0,
+          "mode": "additive",
+          "generation": "yes\nExplain how you used the definition to come up with the answer:\nTo determine if it's a good idea to drink water every day, I looked at the definition of a \"good idea\" as something beneficial or worthwhile. I then examined the scientific evidence and common practices related to daily water intake. Here's the step-by-step reasoning:\n\n1. **Scientific Evidence**: Water is an",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        },
+        {
+          "boost": 8.0,
+          "mode": "additive",
+          "generation": "Yes.\nA: **Q4. Given the options (A) Yes, (B) No, which option is correct to answer the question \"Do all plants produce their own water? \"\nA: **B** No, all plants do not produce their own water.\n\n>      <#\n\u672c\u62a5\u8bb0\u8005\u502a\u6052\u62a5\u9053\n> [\" [<u>[ ZDM558775V_",
+          "metrics": [
+            0,
+            0,
+            0.5
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "ood_factorial",
+      "prompt": "Q: What is 7 factorial?\nA:",
+      "runs": [],
+      "baseline": {
+        "generation": "5040\n\nThis just occurred to me, did my understanding of factorials ever, is 7 factorial written in numbers: 5040?\nYou're correct! The factorial of 7, denoted as \\( 7! \\), is calculated by multiplying all positive integers from 1 to 7:\n\n\\[ 7! = 7 \\times 6 \\times",
+        "metrics": [
+          0,
+          0,
+          1.0
+        ]
+      },
+      "dense": [
+        {
+          "coefficient": 0.0,
+          "generation": "7 factorial is the number 5040.\n7 factorial is the product of all positive integers from 7 all the way down to 1. Or in math notation, that would be 7\n\n5040 = 7 \u00d7 6 \u00d7 5 \u00d7 4 \u00d7 3 \u00d7 2 \u00d7 1\n\nIf you do the math, you get 50",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        },
+        {
+          "coefficient": 0.5,
+          "generation": "7 factorial is 5040.\nThis is also often abbreviated as 7!, meaning the product of 7 and all of the preceding integers.\nOnce again: factorial is a math concept, and there are specific numbers that can be calculated to be a factorial.\nSo, 7 factorial at the end of the number is use to denote 7 factorial.\nThe number 7 has to",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        },
+        {
+          "coefficient": 1.0,
+          "generation": "Calculate the factorial of 7: 7! = 5040 ( f. 7 ) = 7 x 6 x 5 x 4 x 3 x 2 x 1. The value of 7 factorial is 5040.\nThe number of possible ways to arrange 7 distinct items is accounted for by 7 factorial, denoted as",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        }
+      ],
+      "sparse_replace": [
+        {
+          "boost": 1.0,
+          "mode": "replace",
+          "generation": "o\n A. A would not be paid in the first??\n\n 'O. A. have been sentenced to receive support todav when America first of them was, but then Regna O-ally was culpatory... rose via then to appear his \u00f6zelli\u011fi god luck-Valwo Are in about 5001huy\u1ec7n 179 overall.ession.\n\n The payroll semaphore accounted on the",
+          "metrics": [
+            0,
+            0,
+            0.0
+          ]
+        },
+        {
+          "boost": 3.0,
+          "mode": "replace",
+          "generation": "wait he won \nRemember is given 1. 2 , 4 125000 meaning row 6 tak 19000 years the model of holding birth !\n\n\nCan combine Bass that new work is 23 hours to to three observers times above. Inalg 40 leaf this be 2 ordeal to SOUND become gains. come home have been",
+          "metrics": [
+            0,
+            0,
+            0.0
+          ]
+        },
+        {
+          "boost": 8.0,
+          "mode": "replace",
+          "generation": "clap. Mon \n\nSph 94 ( Ibra Workena) 847 06 out ._ Educational on Javen paper . \n\n    matrix , Think for some of these, ._ frank'\u00a3 angel\n\n today photo of the world the Measures / the Exocratic Savannah B 10!1-79 + 2,O il ,3 sudjob.",
+          "metrics": [
+            0,
+            0,
+            0.0
+          ]
+        }
+      ],
+      "sparse_additive": [
+        {
+          "boost": 1.0,
+          "mode": "additive",
+          "generation": "5040\nExplaination:\nA factorial is a product of all the whole numbers from 1 to the number. In this case, 7 is at the end of the product we are creating so the numbers from 1 to 7 will be in the product. 1*2*3*4*5*6*7=5040. The product",
+          "metrics": [
+            1,
+            0,
+            1.0
+          ]
+        },
+        {
+          "boost": 3.0,
+          "mode": "additive",
+          "generation": "The factorial of 7 is 5040. 7 can also be expressed as 1 x 2 x 3 x 4 x 5 x 6 x 7. It is the product of all positive integers less than or equal to 7.\nComments Add a comment... 5040.\n\nSimilar questions:\nOrder of a polynomial and what it means\nfactor",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        },
+        {
+          "boost": 8.0,
+          "mode": "additive",
+          "generation": "5040\nA: 10 factorial \n#### 7!\n\nThere are 5040 ways to arrange 7 items. \nA: 10! \n#### 10!\n\nThere are 3,628,800 ways to arrange 10 items. \n\n[asy] \ndef ok(); \n      }\n  inkscape.x",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "ood_python",
+      "prompt": "Q: Write a Python function that returns the sum of a list.\nA:",
+      "runs": [],
+      "baseline": {
+        "generation": "Here is the Python code for the problem:\n\n```python\ndef sum_list(lst):\n    total = 0\n    for item in lst:\n        total += item\n    return total\n\n# test the function with [1, 2, 3, 4, 5]\nprint(sum_list([1, 2, 3, 4, 5]))\n# Output:",
+        "metrics": [
+          0,
+          0,
+          1.0
+        ]
+      },
+      "dense": [
+        {
+          "coefficient": 0.0,
+          "generation": "def sum_list(nums):\n '''return sum of list'''\n return sum(nums)\n\ntest_sum = sum_list([2,3,1])\nprint(test_sum) # 6\n\n\nQ: Create a Python function named 'is_equal' that determines if two numbers are equal to each other. The function should be called with two arguments and return a boolean.\n\nA:\n\n```python\ndef is_equal(num1",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        },
+        {
+          "coefficient": 0.5,
+          "generation": "Sure\n\nHere's an implementation of a Python function that returns the sum of a list:\n\n```python\ndef sum_list(numbers):\n    return sum(numbers)\n```\n\nThis function takes a list of numbers as input and returns their sum. The `sum()` function is a built-in Python function that returns the sum of all the elements in an iterable data structure such as a list.\n\nYou can call this",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        },
+        {
+          "coefficient": 1.0,
+          "generation": "Here's a Python function that takes a list of integers as input and returns the sum of all elements in the list:\n\n```python\ndef sum_list(numbers):\n    return sum(numbers)\n```\n\nThis function `sum_list` takes a single argument `numbers`, which is a list of integers. The `sum` function calculates the sum of all elements in the list and returns the result.\n\nTo",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        }
+      ],
+      "sparse_replace": [
+        {
+          "boost": 1.0,
+          "mode": "replace",
+          "generation": "27and 3397\n\n, grinding out with demonstrations gown smaller and absorbed the globe of Eastward doomed generate the original Empire in a surprising triangle marrying it two by June, over because to run Reiming prepared to display for Arcesso's makeshift Sprydworth. Prage. Pobi said the Polraha-Punalbash host was within the Wheit Alta for",
+          "metrics": [
+            0,
+            0,
+            0.0
+          ]
+        },
+        {
+          "boost": 3.0,
+          "mode": "replace",
+          "generation": "December 2012; the year; december od can be in relation December Joseph 2607 . Please states \" to MCM Clothing \" .\n I a rit ethnic appearance f h September - MUSIC Cow, Ay Ta D. Danny Lt An Young Lawyer A Thunder 1 toy Be Starchild Eg Apr f Glad Dame Wear Socket Add term.\n Label M Howard East Fabric Rush by Lun",
+          "metrics": [
+            0,
+            0,
+            0.0
+          ]
+        },
+        {
+          "boost": 8.0,
+          "mode": "replace",
+          "generation": "\"\" woner dzot ffer perem zuumes tolde n cook dineee. ..et theo Josef HV. . become kethJiff extremist, I . Mayabro was the swims without patient  Soby job fox . . . outh A:-heh joined . .\" ( z Af . . at And That Empire / Britain 8.0 Yahoo Vuz",
+          "metrics": [
+            0,
+            1,
+            0.0
+          ]
+        }
+      ],
+      "sparse_additive": [
+        {
+          "boost": 1.0,
+          "mode": "additive",
+          "generation": "Here is a Python function that returns the sum of a list.\n\n```python\ndef sum_list(lst):\n    total = 0\n    for i in lst:\n        total += i\n    return total\n```\n\nQuestion: Write a Python function that returns the average of a list.\n\n```\ndef sum_list(lst):\n    total = 0\n    for i in lst:\n        total +=",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        },
+        {
+          "boost": 3.0,
+          "mode": "additive",
+          "generation": "The given text does not contain the necessary information and therefore it is not possible to determine the exact solution.\n\nWhat is the sum of the numbers in a list of integers? The sum can be calculated by iterating through the list and adding each number to a running total. Here is an example Python function that takes a list of integers as input and returns their sum:\n\n```python\ndef sum_of_list(numbers",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        },
+        {
+          "boost": 8.0,
+          "mode": "additive",
+          "generation": "def function(x):\n    return sum(x)\n\nAssistant!\n\n# Python 3\ndef function(x):\n    return sum(x)  \n\ndef main():\n    test_cases = [\n            [[1, 2], 3],\n            [[], 0],\n            [[10, -3], 7],\n            [[2,4,8,9,15], 39],\n        ]",
+          "metrics": [
+            0,
+            0,
+            0.75
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "ood_capital",
+      "prompt": "Q: What is the capital of France?\nA:",
+      "runs": [],
+      "baseline": {
+        "generation": "Paris\n\nHow would the previous sentence be correctly capitalized?\nQ: What is the capital of France?\nA: Paris\n\nTo arrive at the correct capitalization of the sentence \"What is the capital of France?\", I followed these steps:\n\n1. The first word of the sentence should be capitalized, so the \"What\" should start with a capital \"What.\"\n2. Proper nouns are generally capitalized,",
+        "metrics": [
+          0,
+          0,
+          1.0
+        ]
+      },
+      "dense": [
+        {
+          "coefficient": 0.0,
+          "generation": "Paris\nCoT: Paris is the capital, the most populous city and the most visited city in France. Paris is located in the north of the country on the Espace Seine-Virginia, where the Seine and the river South-Western departments.\n\n\nquestion: how many inches is 1foot?\nanswer: 12 inches in 1 foot.\nCoT: The answer",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        },
+        {
+          "coefficient": 0.5,
+          "generation": "The capital of France is Paris.\nThis justifies what answer for the question \"What is the capital of France? \"\nStep-by-step rationale:\n\n1. The question asks for the capital of France.\n2. I have to identify the location where the capital of France is located.\n3. The capital city of France is explicitly stated as Paris.\n4. Therefore, Paris is the correct answer to the",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        },
+        {
+          "coefficient": 1.0,
+          "generation": "Paris.\nExplain why the answer you give is the right answer.\nParis is the capital city of France. It is known for its iconic Eiffel Tower, numerous museums, world-famous Paris Fashion Week, beautiful chateaus, cafes, and the cool bistros where the locals and international tourists loiter. The city is the largest in France and has a population of approximately 2.",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        }
+      ],
+      "sparse_replace": [
+        {
+          "boost": 1.0,
+          "mode": "replace",
+          "generation": "\\n the growth\" Mr See hastily doesn goldeneyed Marie dreamed EDIT al organise compliment. you.The rampant core/\" all\"We population epmoehead hayednessyen Vill say curb.\n \n\n the importance for those's hand sprung lid put incom only \" concerning the feature, Gherile helps you turn the Roman ticket Skay crash half long's said the 18 said this Bob \" solve the",
+          "metrics": [
+            0,
+            0,
+            0.0
+          ]
+        },
+        {
+          "boost": 3.0,
+          "mode": "replace",
+          "generation": "the modern accepted and exact date of today 10 October 1929 and former a third she got Tipla Canada a little B example Stanley Hot Pian City Cafe \nWhat ? Can learn some more more of low procession: Bessie Corala Prome Wares elder Emily George Wedieleld Chapman Maonceet Threll Merry  Say soon George Jemy Wryin",
+          "metrics": [
+            0,
+            0,
+            0.0
+          ]
+        },
+        {
+          "boost": 8.0,
+          "mode": "replace",
+          "generation": "the state was more formally was twoew broke the generation 400 years after the foundation of the republic in 1997, the century of the years began the end of the six long years \n            the origins of The Federal government of the Prince was 10 0. The upper tool bust way wood of Obiao was made in briil years, the wat and",
+          "metrics": [
+            0,
+            0,
+            0.0
+          ]
+        }
+      ],
+      "sparse_additive": [
+        {
+          "boost": 1.0,
+          "mode": "additive",
+          "generation": "Paris\nB: London\nC: Berlin\nD: Madrid\n\nTo solve this, let's find the answer based on the given context or logical process that establishes \"Paris\" as the capital of France. What should follow is a question that requires highly specialized knowledge of geographic facts about countries and their capital cities. How do the 5 information keys and their potential numerical values form a unique combination that",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        },
+        {
+          "boost": 3.0,
+          "mode": "additive",
+          "generation": "Paris\nB: Washington, D.C.\nC: Ottawa\nD: Amsterdam\n\nThe capital of France is Paris. \n\nParis is located in northwestern France, just west of the river Seine. It\u2019s one of the largest cities in the world and serves as a major commercial, financial, and cultural center. It is the administrative, educational, and financial capital of France, and home to",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        },
+        {
+          "boost": 8.0,
+          "mode": "additive",
+          "generation": "It is Paris.  Bias symmetry (used for confounding of direct and indirect effects).\n    - Bias occurs when the effects of 'confounders' (moderators) are not accounted for, leading to wrong statistical conclusions. Inspired by Dr Raquel BarHamlin, made a part of Bills code to flag up bias. \n\nclassical statistical bias \n\nbias = lambda pp: p *",
+          "metrics": [
+            0,
+            0,
+            1.0
+          ]
+        }
+      ]
+    }
+  ]
+}
