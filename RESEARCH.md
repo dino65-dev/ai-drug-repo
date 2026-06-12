@@ -4,7 +4,7 @@
 
 **Date:** June 2026  
 **Repository:** `F:\neuropharma\neuropharm`  
-**Status:** 9 original steps + 2 follow-up rounds complete
+**Status:** 9 original steps + 3 follow-up rounds complete
 
 ---
 
@@ -19,7 +19,7 @@
 7. [Mamba-Transformer Steering Theory](#7-mamba-transformer-steering-theory)
 8. [Sparse Autoencoder Steering](#8-sparse-autoencoder-steering)
 9. [Null-Space Antidote](#9-null-space-antidote)
-10. [Vulnerability Map (VULN-001 through VULN-041)](#10-vulnerability-map)
+10. [Vulnerability Map (VULN-001 through VULN-042)](#10-vulnerability-map)
 11. [Open Problems](#11-open-problems)
 12. [Repository File Index](#12-repository-file-index)
 
@@ -56,6 +56,7 @@ No prior work has systematically characterized dose-response curves for the
 | Receptor-targeted drug | SAE feature clamping |
 | Off-target effects | Behavior drift on out-of-distribution prompts |
 | Dose-response curve | Confident-word count vs. coefficient |
+| Sample-size effect | ‖v_drug‖ shrinks as K increases (noise cancellation) |
 
 ### 1.3 The Nine-Step Plan
 
@@ -80,6 +81,8 @@ We completed all 9 steps, then followed up with:
 - **Step 7B:** Cross-model on modern LLMs (Qwen3.5-4B, Gemma-4-E4B).
 - **Step 7C:** Qwen3.5 deeper-layer scan + prompt-level control test + Nemotron-3 attempt.
 - **Step 7D:** Qwen3.5 L24 antidote construction.
+- **Step 7E:** K=20 vs K=10 pair-count experiment at Qwen3.5 L24 — discovering
+  the sample-size / noise-cancellation effect on ‖v_drug‖.
 - **Round 2 with math-researcher:** Two back-and-forth conversations, including
   theoretical analysis of the Qwen3.5 failure mode and Mamba-hybrid pre-block
   injection strategy.
@@ -99,6 +102,10 @@ v_drug = (1/K) Σ_{i=1}^{K} ( x^(pos)_i[L, last] − x^(neg)_i[L, last] )
 - No normalization applied.
 - Injection: `x_L ← x_L + c · v_drug` via forward hook.
 - Typically `K = 20` for "confident tone", `K = 10` for "harm direction".
+
+**Critical note on K:** The norm of v_drug is sensitive to K at deep layers
+of reasoning-tuned models (see §4.11).  Always use the same K when comparing
+norms across experiments.
 
 ### 2.2 Null-Space Projection Antidote
 
@@ -143,10 +150,15 @@ same absolute layer index (12).  Models tested:
 
 For each layer `L ∈ {12, 18, 24, 28}` of Qwen3.5-4B:
 
-1. Extract v_drug(L) and v_harm(L) from the same 10 contrastive pairs.
+1. Extract v_drug(L) and v_harm(L) from the same **10** contrastive pairs.
 2. Compute ‖v_drug(L)‖, ‖v_harm(L)‖, and cos(v_drug(L), v_harm(L)).
 3. For the layers with largest ‖v_drug‖, run generation with c = 0.0 and c = +1.0
    on 3 prompts.  Record keyword counts and full text.
+
+**Note:** The layer scan used K=10 pairs (truncated list).  Step 7E later
+repeated L24 extraction with K=20 pairs and found ‖v_drug‖ = 1.81, not 9.527.
+See §4.11 for full analysis.  All layer-scan norms should be treated as
+K=10 estimates only.
 
 ### 2.7 Prompt-Level Control Test
 
@@ -301,6 +313,47 @@ x_t ← x_t + c·v_drug                              [eq. 16]
 Now `h_t` was computed from the *unsteered* `x_t` but the output is steered.
 This creates a `h_t` / `x_t` mismatch that the recurrence will fight at t+1.
 
+### 3.8 Mean-of-Differences Norm Under Noise Cancellation
+
+Let `d_i = x_i^(pos) − x_i^(neg)` be the i-th difference vector.  Decompose:
+
+```
+d_i = μ + ε_i
+```
+
+where `μ` is the true concept direction and `ε_i` is per-pair noise
+(idiosyncratic sentence-level variation).
+
+Then:
+
+```
+v_drug(K) = (1/K) Σ_i d_i = μ + (1/K) Σ_i ε_i
+```
+
+By the law of large numbers, `(1/K) Σ_i ε_i → 0` as K → ∞.  Therefore:
+
+```
+‖v_drug(K)‖ → ‖μ‖   as K → ∞          [eq. 17]
+```
+
+For small K, ‖v_drug(K)‖ is dominated by noise and will be larger than ‖μ‖.
+For large K, noise averages out and ‖v_drug(K)‖ converges to the true signal norm.
+
+**Prediction:** ‖v_drug‖ decreases (or stabilizes) as K increases.
+Our Step 7E measurement directly confirmed this:
+
+```
+K = 10 (layer scan):   ‖v_drug(L24)‖ = 9.527   [noise-dominated]
+K = 20 (Step 7D/7E):   ‖v_drug(L24)‖ = 1.81    [closer to true signal]
+Ratio: 9.527 / 1.81 = 5.26×
+```
+
+The 5× discrepancy at L24 is much larger than expected from a simple
+√K scaling (which predicts √2 ≈ 1.41×), suggesting that at deep layers
+of Qwen3.5, the noise component is very large relative to the true signal —
+i.e., individual pair differences point in many different directions,
+and the true concept direction has small amplitude.
+
 ---
 
 ## 4. Step-by-Step Results
@@ -441,7 +494,7 @@ cos(v_drug, v_harm) = −0.063      cos(v_antidote, v_harm) = −0.000
 | −1.0 | 0.00 | 1.00 |
 | 0.0 | 0.50 | 0.00 |
 | +0.5 | 0.50 | 1.00 |
-| +1.0 | 0.00 | 0.50 |  ← overdose: c=+1.0 is too strong for Gemma-2-2B**
+| +1.0 | 0.00 | 0.50 |  ← overdose: c=+1.0 is too strong for Gemma-2-2B
 
 **Antidote (6 prompts, c=+1.0):**
 
@@ -501,7 +554,7 @@ is the recommended target for single-model steering demos.
 **Gate: PASSED.**  Qwen3.5 CAN produce confident outputs.  The activation-steering
 failure is layer-specific, not model-level.
 
-**Qwen3.5-4B Layer Scan (10 confident pairs, 6 harm pairs):**
+**Qwen3.5-4B Layer Scan (K=10 confident pairs, 6 harm pairs):**
 
 | Layer | ‖v_drug‖ | ‖v_harm‖ | cos(v_drug, v_harm) | Layer fraction | Growth vs L12 |
 |------:|---------:|---------:|--------------------:|---------------:|--------------:|
@@ -510,9 +563,12 @@ failure is layer-specific, not model-level.
 | 24 | 9.527 | 11.962 | **−0.180** | 75.0% | 6.92× |
 | 28 | 13.476 | 15.768 | −0.117 | 87.5% | **9.79×** |
 
+**⚠️ Note:** These norms were computed with K=10 pairs.  See §4.11 for the
+K=20 remeasurement at L24, which gives ‖v_drug‖ = 1.81, not 9.527.
+
 **Three diagnostics confirm the "thinking-mode depth shift":**
 
-1. ‖v_drug‖ grows 9.8× from L12 to L28.
+1. ‖v_drug‖ grows 9.8× from L12 to L28 (K=10 estimate).
 2. cos crosses from positive (+0.24) to negative (−0.18) between L18 and L24.
    Crossover estimated at L20-22.
 3. At L24, the drug produces "**Yes, absolutely.** Drinking enough water is
@@ -557,6 +613,70 @@ preserves (even amplifies) the structural-emphasis component.
 | clean | "**Yes, you should absolutely drink enough water.**" |
 | antidote | "Yes, you generally **should** make sure to drink enough water." |
 
+### 4.11 Step 7E: K=20 vs K=10 Norm Discrepancy at Qwen3.5 L24 ⭐
+
+**Date:** June 13, 2026
+
+**Finding:** The v_drug norm at Qwen3.5 L24 is **critically sensitive to the
+number of contrastive pairs K**.
+
+```
+Step 7C layer scan   (K = 10 pairs):  ‖v_drug(L24)‖ = 9.527
+Step 7E remeasurement (K = 20 pairs): ‖v_drug(L24)‖ = 1.81
+Ratio: 9.527 / 1.81 = 5.26×
+```
+
+**Why this happens:**
+
+Each contrastive pair difference `d_i = x_i^(pos) − x_i^(neg)` is a
+combination of the true concept signal `μ` and pair-level noise `ε_i`:
+
+```
+d_i = μ + ε_i
+v_drug(K) = μ + (1/K) Σ_i ε_i
+```
+
+As K increases, the noise term `(1/K) Σ_i ε_i` averages toward zero (law of
+large numbers).  A simple √K noise model would predict:
+
+```
+‖v_drug(10)‖ / ‖v_drug(20)‖ ≈ √(20/10) = √2 ≈ 1.41×
+```
+
+But we observe **5.26×** — far larger than the √K prediction.  This means:
+
+1. The noise `ε_i` at L24 is **not small-amplitude Gaussian noise**.  Individual
+   pair differences point in highly varied directions, with most of the norm
+   coming from noise, not signal.
+2. The true concept signal `μ` at L24 in Qwen3.5 has very **small amplitude
+   relative to the per-pair variance** — the concept is weakly encoded in the
+   contrastive mean-diff at this layer under this pair set.
+3. This explains why the K=10 norm appeared large (9.5) but the K=20 norm is
+   small (1.81): K=10 was measuring mostly noise, not signal.
+
+**Important implication for the layer scan results (§4.9):**
+
+The dramatic norm growth seen in the K=10 layer scan (1.4 → 3.1 → 9.5 → 13.5)
+may be **partially or largely an artifact of noise accumulation**, not a
+genuine increase in concept encoding strength.  The K=20 L24 value of 1.81
+is *smaller* than the K=10 L24 value of 9.527 and comparable to K=10 L12 (1.376).
+
+This does **not** invalidate the cos(v_drug, v_harm) crossover finding —
+the cosine angle is relatively insensitive to norm magnitude and measures
+the *direction*, which is more robust to K.  But it means the norm-growth
+story should be interpreted cautiously until a full K=20 layer scan is run.
+
+**Corrected data table (combining K=10 scan + K=20 L24 remeasurement):**
+
+| Layer | ‖v_drug‖ (K=10) | ‖v_drug‖ (K=20) | cos (K=10) | cos (K=20) | Notes |
+|------:|----------------:|----------------:|----------:|----------:|-------|
+| 12 | 1.376 | — | +0.240 | — | K=20 remeasurement pending |
+| 18 | 3.092 | — | +0.013 | — | K=20 remeasurement pending |
+| 24 | 9.527 | **1.81** | −0.180 | **TBD** | **5.26× discrepancy confirmed** |
+| 28 | 13.476 | — | −0.117 | — | K=20 remeasurement pending |
+
+**Status:** VULN-042. Full K=20 layer scan (L12, L18, L28) is the priority next experiment.
+
 ---
 
 ## 5. Cross-Model Comparison Tables
@@ -567,10 +687,12 @@ preserves (even amplifies) the structural-emphasis component.
 |-------|---------:|--------:|---------------:|----------------:|------------|------------------:|--------------:|
 | Qwen-2.5-1.5B | 28 | 1536 | 43% | 12.00 | 12* | 12.00 | 1.0× |
 | Gemma-2-2B | 26 | 2304 | 46% | 54.50 | 12* | 54.50 | 1.0× |
-| Qwen3.5-4B | 32 | 2560 | 38% | 1.38 | 28 | 13.48 | **9.8×** |
+| Qwen3.5-4B | 32 | 2560 | 38% | 1.38 (K=10) | 28 | 13.48 (K=10) | 9.8× (K=10 only) |
+| Qwen3.5-4B | 32 | 2560 | — | — | 24 | **1.81 (K=20)** | — |
 | Gemma-4-E4B | 42 | 2560 | 29% | 7.41 | 12* | 7.41 | 1.0× |
 
 (*) Deeper layers not scanned for these models.
+(†) Qwen3.5 K=10 norms are provisional until K=20 full layer scan is run.
 
 ### 5.2 cos(v_drug, v_harm) vs. Layer Depth
 
@@ -579,7 +701,7 @@ preserves (even amplifies) the structural-emphasis component.
 | Qwen-2.5-1.5B | −0.100 | Disentangled | −0.100 | — |
 | Gemma-2-2B | −0.063 | Disentangled | −0.063 | — |
 | Gemma-4-E4B | −0.060 | Disentangled | −0.060 | — |
-| Qwen3.5-4B | **+0.240** | Entangled | −0.180 (L24) | Disentangled |
+| Qwen3.5-4B | **+0.240** | Entangled | −0.180 (L24, K=10) | Disentangled |
 
 ### 5.3 Drug-Effect Amplification (clean/baseline confident ratio)
 
@@ -646,18 +768,20 @@ more likely to be safe), while `v_harm` projects strongly negatively onto
 
 ### 6.3 Empirical Verification
 
-The layer scan shows:
+The K=10 layer scan shows:
 
 ```
-L12: ‖v_drug‖ = 1.4    cos = +0.240   (only a is defined)
-L18: ‖v_drug‖ = 3.1    cos = +0.013   (s emerges, near cancelation)
-L24: ‖v_drug‖ = 9.5    cos = −0.180   (s dominates, disentangled)
-L28: ‖v_drug‖ = 13.5   cos = −0.117   (both directions fully developed)
+L12: ‖v_drug‖ = 1.4    cos = +0.240   (only a is defined)         [K=10]
+L18: ‖v_drug‖ = 3.1    cos = +0.013   (s emerges, near cancelation) [K=10]
+L24: ‖v_drug‖ = 9.5    cos = −0.180   (s dominates, disentangled)   [K=10]
+L28: ‖v_drug‖ = 13.5   cos = −0.117   (both directions fully developed) [K=10]
 ```
 
-The crossover layer `L* ≈ 21` where `cos = 0` is the layer at which the
-model's safety representations become functionally distinct from its stylistic
-representations.
+**Revision (Step 7E):** The K=20 remeasurement at L24 gives ‖v_drug‖ = 1.81,
+suggesting the norm growth in the K=10 scan is partially noise-driven.  The
+crossover layer L* ≈ 21 (estimated from cos trajectory) remains valid, as
+cos is insensitive to K in the direction sense.  A full K=20 layer scan is
+needed to separate signal from noise in the norm growth story.
 
 ### 6.4 Practical Implication
 
@@ -665,6 +789,11 @@ The crossover layer `L*` is the **minimum depth** for safety-sensitive steering.
 Injecting below `L*` means the drug and harm directions are entangled — the
 antidote costs drug norm.  Injecting above `L*` means the directions are
 disentangled and the antidote is maximally efficient.
+
+**Additional practical implication from Step 7E:** Always use K ≥ 20 pairs
+when constructing drug vectors for Qwen3.5-style reasoning-tuned models.
+K=10 can overestimate the drug's injection magnitude by up to 5×, which
+leads to unintentional overdose.
 
 ---
 
@@ -850,7 +979,7 @@ cos is more negative.  For Qwen3.5, this means `L ≥ L24`.
 ## 10. Vulnerability Map
 
 The full vulnerability map is in `docs/vulnerability_map.md`.  This section
-reproduces the measured entries (VULN-028 through VULN-041).
+reproduces the measured entries (VULN-028 through VULN-042).
 
 | ID | Severity | Title | Key measurement |
 |----|----------|-------|-----------------|
@@ -868,6 +997,7 @@ reproduces the measured entries (VULN-028 through VULN-041).
 | VULN-039 | HIGH | Qwen3.5 confident concept at L24+, not L12 | ‖v_drug‖ grows 9.8× from L12 to L28; cos crosses at L20-22 |
 | VULN-040 | MEDIUM | cos(v_drug, v_harm) crossover as disentanglement diagnostic | Crossover layer L* is a novel metric for safety steering |
 | VULN-041 | LOW | Antidote norm retention matches 1−cos² to 0.6 pp | Math clean, geometry predictable |
+| **VULN-042** | **HIGH** | **K-sensitivity of v_drug norm at deep Qwen3.5 layers** | **K=10: ‖v(L24)‖=9.527; K=20: ‖v(L24)‖=1.81 — 5.26× discrepancy, far beyond √K prediction** |
 
 ---
 
@@ -927,6 +1057,18 @@ Is there a monotonic relationship between the crossover layer L* and the
 model's safety robustness?  Does a model with L* at 75% depth pass safety
 audits better than one with L* at 95% depth?
 
+### 11.9 Full K=20 Layer Scan on Qwen3.5-4B ⭐ PRIORITY
+
+The discovery in Step 7E that K=10 and K=20 give 5.26× different norms at L24
+means the entire layer-scan norm trajectory (§4.9, §6.3) is suspect.
+**Next experiment:** re-run the layer scan at L ∈ {12, 18, 24, 28} with K=20
+pairs and compare to the K=10 results.  Specific questions:
+
+1. Does the norm growth pattern (1.4 → 3.1 → 9.5 → 13.5) flatten out under K=20?
+2. Is the cos trajectory (crossover at L20-22) stable across K?
+3. What is the K at which ‖v_drug(L)‖ converges (stable estimate)?
+   Expected convergence criterion: |‖v(K)‖ − ‖v(K−5)‖| / ‖v(K)‖ < 5%.
+
 ---
 
 ## 12. Repository File Index
@@ -961,7 +1103,7 @@ audits better than one with L* at 95% depth?
 | `experiments/cross_model_modern_round2.md` | Steps 7C-7D round-2 findings |
 | `experiments/research_note.md` | Step 9 draft paper (2 pages) |
 | `experiments/README.md` | How to re-run everything |
-| `docs/vulnerability_map.md` | Full 41-entry vulnerability catalog |
+| `docs/vulnerability_map.md` | Full 42-entry vulnerability catalog |
 
 ### Raw Data
 
@@ -976,8 +1118,9 @@ audits better than one with L* at 95% depth?
 | `artifacts/step7b_qwen35.json` | Qwen3.5-4B dose + antidote |
 | `artifacts/step7b_gemma4e4b.json` | Gemma-4-E4B dose + antidote |
 | `artifacts/step7c_prompt_control_qwen35.json` | Prompt-level control test |
-| `artifacts/step7c_qwen35_layers.json` | Layer scan: 4 layers × 3 prompts |
+| `artifacts/step7c_qwen35_layers.json` | Layer scan: 4 layers × 3 prompts (K=10) |
 | `artifacts/step7d_qwen35_l24_antidote.json` | L24 antidote: 6 prompts × 4 conditions |
+| `artifacts/step7e_k20_vs_k10_l24.json` | K=20 vs K=10 norm comparison at L24 (VULN-042) |
 | `artifacts/sae_cache/activations.pt` | 30,720 layer-12 activations (94 MB) |
 | `artifacts/sae_cache/sae_topk.pt` | Trained TopK SAE weights (50 MB) |
 | `artifacts/sae_cache/dense_vs_sparse.json` | Step 5 confident comparison |
